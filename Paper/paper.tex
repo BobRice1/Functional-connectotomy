@@ -23,6 +23,143 @@ The full analysis and figure-generation pipeline is available at
 \url{https://github.com/BOBRICE1/Functional-connectotomy}.}
 \affiliation{School of Mathematical Sciences, University of Nottingham, UK}
 
+
+
+\begin{abstract}
+ABSTRACT
+\end{abstract}
+
 \maketitle
+
+\section{Introduction}
+Understanding how large-scale brain activity emerges from interactions between distributed neural populations is a central problem in computational neuroscience. Whole-brain models address this by combining local neural dynamics with large-scale connectivity, allowing functional connectivity patterns to be reproduced and interpreted mechanistically ~\cite{Deco2011, Deco2014}. A common approach is to represent brain regions as coupled oscillators, such that synchronisation between regions gives rise to coherent large-scale activity ~\cite{Cabral2011}. In particular, Hopf oscillator models are widely used because they capture the transition between stable and oscillatory dynamics while remaining mathematically tractable ~\cite{Freyer2011}. 
+Alexandersen et al. ~\cite{Alexandersen2025} applied this framework to investigate glioma-related alterations in brain dynamics. Using a whole-brain model of coupled Hopf oscillators, they showed that the system behaviour is largely determined by a normalised coupling parameter reflecting the balance between interregional coupling and local excitability. They further reported that this balance is shifted in glioma patients towards stronger global interactions.
+In this project, we both reproduce these core dynamical results and extend the model (COMPLETE WITH EXTENSIONS). We begin by analysing a single Hopf oscillator, then consider a two-node system to examine coupling-induced synchronisation, and finally simulate a network of coupled oscillators. Numerical integration and parameter sweeps are used throughout to investigate how the dynamics depend on the relationship between coupling strength and excitability, with particular emphasis on the scaling behaviour reported in the original study.
+Building on this reproduced framework, later sections introduce extensions. (COMPLETE WITH EXTENSIONS).
+
+
+
+\section{Methods}
+\subsection{Reproduction of the original model}
+The reproduction was implemented by first validating the local and pairwise Hopf dynamics in reduced settings, and then scaling the model to larger networks and the empirical 78-node connectome used in the original study. This allowed us to verify the numerical implementation before reproducing the whole-brain fitting, scaling-law, and connectotomy analyses.
+
+\subsection{Hopf oscillator model}
+At each node, the dynamics were governed by the Hopf normal form
+\begin{equation}
+\dot{z}_i = z_i\left(\lambda + i\omega_i - |z_i|^2\right)
++ K \tanh\!\left(C \sum_{j=1}^{N} w_{ij} x_j\right),
+\end{equation}
+where $z_i = x_i + i y_i$ is the complex state of node $i$, $\lambda$ is the excitability parameter, $\omega_i$ is the intrinsic angular frequency, $K$ is the global coupling strength, $C$ is a structural scaling constant, and $w_{ij}$ are the entries of the structural connectivity matrix. As in the original paper, the real part $x_i$ was treated as the simulated neural signal.
+
+\subsection{Reduced-model validation}
+Before reproducing the empirical whole-brain results, we verified the Hopf model in simplified settings to confirm that the implementation captured the expected local and pairwise dynamics. First, we analysed a single uncoupled Hopf oscillator by setting $N=1$ and $K=0$, and simulated the system across subcritical, critical, and supercritical values of $\lambda$. This recovered the standard Hopf bifurcation structure, with trajectories decaying to the origin for $\lambda<0$ and converging to stable oscillations of amplitude $\sqrt{\lambda}$ for $\lambda>0$. We then considered a two-node system with symmetric coupling to examine the onset of phase locking and the dependence of phase-based synchronisation on coupling strength and excitability. For a range of $K$, $\lambda$, and intrinsic frequency differences, we computed the phase lag index (PLI) from the filtered real-valued signals and confirmed that synchronisation increases with coupling and is approximately organised by the normalised coupling
+\begin{equation}
+\kappa = \frac{K}{\sqrt{\lambda}}.
+\end{equation}
+These reduced-model tests served primarily as validation and provided intuition for the scaling behaviour investigated later in the empirical network model.
+
+\subsection{Network simulations}
+The final stage of the reproduction scaled the model to larger networks. Before fitting empirical data, the Hopf model was first tested on three synthetic network families (ring, random, and modular) at sizes $N=10$, $30$, and $78$. These synthetic simulations were used to confirm that the model produced plausible oscillatory dynamics and structured PLI matrices across a range of topologies.
+The empirical-scale analysis then used a 78-node structural connectivity matrix together with cortical frequency values provided in the empirical dataset used for the reproduction. Control and glioma PLI matrices were used as empirical fitting targets. Simulations followed the same signal-processing pipeline as the original study: the real-valued node signals were simulated, filtered in the alpha band, transformed into phases using the Hilbert transform, and converted into pairwise PLI matrices.
+
+\subsection{Parameter fitting and comparison with empirical data}
+To reproduce the fitting procedure in the original paper, a two-dimensional grid search over coupling strength $K$ and excitability $\lambda$ was performed. For each parameter pair, the simulated PLI matrix was compared with the empirical PLI using the Pearson correlation between the upper-triangular entries of the matrices. Repeated simulations over multiple random initial conditions were used to obtain more stable estimates of fit quality. 
+This fitting procedure was first used to reproduce the control-cohort parameter landscape corresponding to Figure~2 of the original paper. A shuffled-connectivity null model was then introduced by randomising the empirical structural connectivity matrix while preserving the weight distribution, in order to test whether the observed fit depended on the true network topology. Thresholded comparisons were also carried out using top-3\% PLI matrices, matching the thresholding procedure implemented in the network simulations. 
+
+\subsection{Scaling-law reproduction}
+The log--log parameter search described in the paper was reproduced by evaluating the goodness of fit over logarithmically spaced grids of $K$ and $\lambda$. The resulting fit surface was examined along lines of constant
+\begin{equation}
+K = \kappa \sqrt{\lambda},
+\end{equation}
+to test the paper's claim that the phase dynamics are approximately invariant when the normalised coupling $\kappa$ is held fixed. This formed the central theoretical reproduction of the scaling result.
+
+\subsection{Glioma fitting and connectotomy analyses}
+The later sections of the reproduction extended the same fitting framework to the glioma cohort. Separate parameter searches were performed against the glioma PLI matrix, and the resulting optimal coupling strengths were compared with the control case across multiple values of $\lambda$. Distributions of optimal coupling differences were then computed over repeated initial conditions, together with Wilcoxon tests, to reproduce the cohort-level comparisons in the original study. 
+Finally, functional connectotomy analyses were implemented to reproduce the paper's Figures~6--8. Tumour-related regions were removed from the PLI comparison stage, the model was refit, and the resulting changes in optimal coupling were analysed for individual patients, tumour clusters, and pooled distributions. This allowed the contribution of tumour regions to elevated coupling strength to be assessed within the reproduced modelling framework.
+
+
+
+
+
+\section{Results}
+
+\subsection{Reduced-model validation}
+Before turning to the empirical whole-brain model, we verified that the numerical implementation reproduced the expected Hopf dynamics in reduced settings. For a single uncoupled oscillator, simulations recovered the canonical Hopf bifurcation: trajectories decayed to the origin for $\lambda<0$, remained at the bifurcation boundary for $\lambda=0$, and converged to stable limit-cycle oscillations for $\lambda>0$. The steady-state amplitude followed the theoretical prediction $|z|=\sqrt{\lambda}$, confirming that the implementation correctly captures the dependence of local oscillatory amplitude on excitability. In a symmetric two-node system, increasing coupling strength promoted phase locking and increased the phase lag index (PLI), with synchronisation approximately organised by the normalised coupling
+\begin{equation}
+\kappa = \frac{K}{\sqrt{\lambda}}.
+\end{equation}
+Taken together, these reduced-model results served mainly as validation and provided intuition for the scaling structure examined in the empirical network model.
+
+\subsection{Empirical network fitting and scaling law}
+We next scaled the model to the empirical 78-node structural connectome and compared simulated phase-lag connectivity with the empirical control-cohort PLI matrix. The simulated PLI reproduced broad block-structured organisation also visible in the empirical data, indicating that the coupled Hopf network captures non-trivial large-scale structure rather than producing homogeneous synchrony (Fig.~\ref{fig:network_matrices}).
+
+To quantify model performance, we performed a grid search over coupling strength $K$ and excitability $\lambda$, using the Pearson correlation between simulated and empirical PLI as the goodness-of-fit measure. The best fits occurred for positive values of $\lambda$, and the high-fit region extended diagonally through parameter space (Fig.~\ref{fig:network_scaling}). When the same search was plotted on log--log axes, the fit remained approximately constant along lines of the form
+\begin{equation}
+K = \kappa \sqrt{\lambda},
+\end{equation}
+showing that the phase-based functional connectivity is governed primarily by the balance between interregional coupling and local excitability rather than by $K$ and $\lambda$ independently. This reproduces the central scaling-law result of the original study.
+
+\subsection{Glioma-control comparison}
+We then compared the fitted parameter landscapes for the control and glioma cohort averages. Across excitability values, the glioma cohort was shifted toward higher optimal coupling strengths than the control cohort (Fig.~\ref{fig:network_glioma}). This difference was also reflected in the fitted normalised-coupling lines, which gave a larger effective $\kappa$ for glioma than for control. Thus, the reproduced whole-brain model supports the original paper's central claim that glioma-related dynamics are associated with stronger interregional interactions relative to local oscillatory dynamics.
+
+\subsection{Functional connectotomy}
+Finally, we reproduced the functional connectotomy analysis by removing tumour-related regions from the PLI comparison stage and refitting the model. Relative to the corresponding control comparison, the optimal coupling strength generally decreased after connectotomy (Fig.~\ref{fig:network_connectotomy}), indicating that tumour regions contribute to the elevated coupling observed in the glioma fits. Although the magnitude of this effect varied across patients and tumour-region groupings, the pooled post-connectotomy shifts remained biased toward lower coupling, consistent with the interpretation that tumour pathology pushes the system toward stronger effective interregional coupling.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig2_labelled_matrices.png}
+    \caption{
+    Empirical-scale network fitting. Shown are the empirical structural connectivity matrix, a best-fit simulated PLI matrix, and the empirical control PLI matrix. The simulated matrix reproduces broad block-structured organisation present in the empirical data, supporting the use of the coupled Hopf network as a coarse-grained model of large-scale functional connectivity.
+    }
+    \label{fig:network_matrices}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
+    \caption{
+    Log--log parameter search for the empirical network model. Across multiple initial conditions, the best-fit region follows approximately diagonal bands corresponding to constant $\kappa = K/\sqrt{\lambda}$, indicating that the goodness of fit is largely controlled by the normalised coupling rather than by $K$ and $\lambda$ independently.
+    }
+    \label{fig:network_scaling}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig4_glioma_comparison.png}
+    \caption{
+    Comparison of fitted parameter landscapes for the control and glioma cohorts. The optimal coupling curve lies systematically above the control curve, corresponding to a larger fitted normalised coupling for the glioma cohort. This indicates a shift toward stronger global interactions in the glioma network dynamics.
+    }
+    \label{fig:network_glioma}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig6_8_connectotomy.png}
+    \caption{
+    Functional connectotomy analysis. Removing tumour-related regions from the PLI comparison and refitting the model generally reduces the optimal coupling strength relative to the corresponding control comparison, indicating that tumour regions contribute to the elevated coupling observed in glioma fits.
+    }
+    \label{fig:network_connectotomy}
+\end{figure*}
+
+\begin{thebibliography}{99}
+\bibitem{Deco2011}
+G. Deco, V. K. Jirsa, and A. R. McIntosh, “Emerging concepts for the dynamical organization of resting-state activity in the brain,” Nature Reviews Neuroscience, vol. 12, no. 1, pp. 43–56, 2011.
+\url{https://doi.org/10.1038/nrn2961}
+\bibitem{Deco2014}
+G. Deco, and M. L. Kringelbach, “Great expectations: using whole-brain computational connectomics for understanding neuropsychiatric disorders,” Neuron, vol. 84, no. 5, pp. 892–905, 2014.
+\url{https://doi.org/10.1016/j.neuron.2014.08.034}
+\bibitem{Cabral2011}
+J. Cabral, E. Hugues, O. Sporns, and G. Deco, “Role of local network oscillations in resting-state functional connectivity,” NeuroImage, vol. 57, no. 1, pp. 130–139, 2011.
+\url{https://doi.org/10.1016/j.neuroimage.2011.04.010}
+\bibitem{Freyer2011}
+F. Freyer, J. A. Roberts, R. Becker, P. A. Robinson, P. Ritter, and M. Breakspear, “Biophysical mechanisms of multistability in resting-state cortical rhythms,” The Journal of Neuroscience, vol. 31, no. 17, pp. 6353–6361, 2011.
+\url{https://doi.org/10.1523/JNEUROSCI.6693-10.2011}
+\bibitem{Alexandersen2025}
+C. G. Alexandersen, L. Douw, M. L. M. Zimmermann, C. Bick, and A. Goriely, "Functional connectotomy of a whole-brain model reveals tumor-induced alterations to neuronal dynamics in glioma patients," Network Neuroscience, vol. 9, no. 1, pp. 280--302, 2025.
+\url{https://doi.org/10.1162/netn_a_00426}
+
+\end{thebibliography}
+
+
 
 \end{document}
