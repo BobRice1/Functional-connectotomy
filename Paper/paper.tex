@@ -77,6 +77,29 @@ to test the paper's claim that the phase dynamics are approximately invariant wh
 The later sections of the reproduction extended the same fitting framework to the glioma cohort. Separate parameter searches were performed against the glioma PLI matrix, and the resulting optimal coupling strengths were compared with the control case across multiple values of $\lambda$. Distributions of optimal coupling differences were then computed over repeated initial conditions, together with Wilcoxon tests, to reproduce the cohort-level comparisons in the original study. 
 Finally, functional connectotomy analyses were implemented to reproduce the paper's Figures~6--8. Tumour-related regions were removed from the PLI comparison stage, the model was refit, and the resulting changes in optimal coupling were analysed for individual patients, tumour clusters, and pooled distributions. This allowed the contribution of tumour regions to elevated coupling strength to be assessed within the reproduced modelling framework.
 
+\subsection{Virtual lesioning atlas}
+To extend the connectotomy analysis beyond the predefined tumour-region sets used in Alexandersen et al. ~\cite{Alexandersen2025}, a systematic virtual-lesioning analysis was performed over all 78 AAL regions. The same spectral-normalised empirical structural connectivity matrix, raw control and glioma PLI matrices, and subject-mean cortical frequencies used in the reproduction were retained. Simulations were conducted at a fixed excitability value $\lambda = 40$, corresponding to the best-fit empirical value identified in the reproduction.
+
+For each of 300 random initial conditions, the global coupling parameter $K$ was swept over 60 linearly spaced values between $0.5$ and $50$. At each $(K,\lambda)$ pair and for each initial condition, the whole-brain Hopf model was simulated once using structural scaling constant $C=20$, total simulated time $t_{\mathrm{total}}=8.0$, discarded transient time $t_{\mathrm{discard}}=1.5$, and sampling frequency $f_s = 300$, yielding a single simulated PLI matrix. This matrix was compared with the empirical control and glioma PLI matrices using the Pearson correlation between the upper-triangular matrix entries. To implement virtual lesioning, each region was removed in turn from the comparison stage by deleting the corresponding row and column from both the simulated and empirical PLI matrices, after which the correlation was recomputed on the reduced matrices. 
+
+For each initial condition and each region $i$, the parameter sweep yielded an optimal full-network coupling $K_{\mathrm{full}}^{*}$ and a region-masked optimum $K_{\mathrm{lesion},i}^{*}$, defined as the values of $K$ that maximised the correlation with the empirical data. The lesioning effect of region $i$ was then quantified as
+\begin{equation}
+\Delta K_i = K_{\mathrm{lesion},i}^{*} - K_{\mathrm{full}}^{*},
+\end{equation}
+computed separately for the control and glioma comparisons. Negative values of $\Delta K_i$ indicate that masking a region reduces the fitted optimal coupling, implying that the region contributes positively to the elevated coupling required to reproduce the empirical functional connectivity. 
+
+To isolate disease-specific effects, a differential lesioning score was defined as
+\begin{equation}
+\Delta K_i^{\mathrm{diff}} = \Delta K_i^{\mathrm{glioma}} - \Delta K_i^{\mathrm{control}}.
+\end{equation}
+This quantity captures the extent to which a region's contribution to coupling strength is specific to the glioma cohort, rather than being a general feature of the model fit. 
+
+Per-region effects were summarised across initial conditions by their mean and the 2.5th and 97.5th percentiles. Statistical evidence for non-zero lesioning effects was assessed using Wilcoxon signed-rank tests across initial conditions, applied to the non-zero entries of each regional effect vector, with significance evaluated using a Bonferroni-corrected threshold over the 78 regional tests.
+
+To assess whether strong coupling drivers coincide with structurally important regions, three graph-theoretic measures were computed from the same spectral-normalised empirical structural connectivity matrix for each region: degree, weighted strength, and eigenvector centrality. Spearman rank correlations were used to compare these measures with the lesioning effect sizes, separately for control and glioma fits. Finally, enrichment of the top-ranked lesioning drivers within the tumour-region set used in Alexandersen et al. ~\cite{Alexandersen2025} was assessed using a hypergeometric overlap test for top-$N$ sets with $N \in \{5,10,15,20,30\}$. For the overlap analysis, the tumour set was represented as 19 regions grouped into Frontal L, Temporal L, and Frontal R categories.
+
+Together, these analyses produced a region-wise atlas of coupling drivers and tested whether the connectotomy effect can be explained by the structural importance of the affected regions.
+
 
 
 
