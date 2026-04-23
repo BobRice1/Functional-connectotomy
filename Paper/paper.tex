@@ -10,7 +10,7 @@
 
 \begin{document}
 
-\title{Functional Connectotomy}
+\title{Functional Connectotomy in Glioma: Reproduction of a Hopf Whole-Brain Model and Extension via Virtual Lesioning}
 \author{Gillian Macdonald}
 \affiliation{School of Mathematical Sciences, University of Nottingham, UK}
 \author{Lenka Okasova}
@@ -26,17 +26,18 @@ The full analysis and figure-generation pipeline is available at
 
 
 \begin{abstract}
-ABSTRACT
+We reproduced the main findings of Alexandersen et al.\ using a Hopf whole-brain model fitted to phase-lag index (PLI) functional connectivity in control and glioma data. The reproduction recovered the approximate scaling relation $K \propto \sqrt{\lambda}$, indicating that the model dynamics are governed primarily by the normalised coupling $\kappa = K/\sqrt{\lambda}$. We also reproduced the shift toward higher fitted coupling in glioma and the connectotomy result that removing tumour-related regions from the fitting comparison reduces the optimal coupling.
+We then extended the connectotomy framework by performing systematic virtual lesioning across all 78 AAL regions. This produced a region-wise atlas showing that coupling effects are spatially heterogeneous and disproportionately driven by a subset of regions. Glioma-specific lesioning effects were concentrated mainly in frontal and medial regions. These effects were associated with eigenvector centrality, but not with degree or weighted strength, suggesting that the strongest coupling drivers are globally influential structural nodes.
+Together, these results support the interpretation that glioma alters whole-brain dynamics by shifting the balance between local oscillatory activity and interregional coupling, and show that connectotomy-style analyses can be extended to identify region-specific candidate drivers of abnormal connectivity.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Understanding how large-scale brain activity emerges from interactions between distributed neural populations is a central problem in computational neuroscience. Whole-brain models address this by combining local neural dynamics with large-scale connectivity, allowing functional connectivity patterns to be reproduced and interpreted mechanistically ~\cite{Deco2011, Deco2014}. A common approach is to represent brain regions as coupled oscillators, such that synchronisation between regions gives rise to coherent large-scale activity ~\cite{Cabral2011}. In particular, Hopf oscillator models are widely used because they capture the transition between stable and oscillatory dynamics while remaining mathematically tractable ~\cite{Freyer2011}. 
-Alexandersen et al. ~\cite{Alexandersen2025} applied this framework to investigate glioma-related alterations in brain dynamics. Using a whole-brain model of coupled Hopf oscillators, they showed that the system behaviour is largely determined by a normalised coupling parameter reflecting the balance between interregional coupling and local excitability. They further reported that this balance is shifted in glioma patients towards stronger global interactions.
-In this project, we both reproduce these core dynamical results and extend the model (COMPLETE WITH EXTENSIONS). We begin by analysing a single Hopf oscillator, then consider a two-node system to examine coupling-induced synchronisation, and finally simulate a network of coupled oscillators. Numerical integration and parameter sweeps are used throughout to investigate how the dynamics depend on the relationship between coupling strength and excitability, with particular emphasis on the scaling behaviour reported in the original study.
-Building on this reproduced framework, later sections introduce extensions. (COMPLETE WITH EXTENSIONS).
-
+Understanding how large-scale brain activity emerges from interactions between distributed neural populations is a central problem in computational neuroscience. Whole-brain models address this by combining local neural dynamics with large-scale structural connectivity, allowing functional connectivity patterns to be reproduced and interpreted mechanistically \cite{Deco2011,Deco2014}. A common approach is to represent brain regions as coupled oscillators, such that synchronisation between regions gives rise to coherent large-scale activity \cite{Cabral2011}. Among these models, Hopf oscillators are particularly useful because they capture the transition between stable and oscillatory dynamics while remaining mathematically tractable \cite{Freyer2011}.
+Alexandersen et al.~\cite{Alexandersen2025} used a Hopf whole-brain model to investigate glioma-related alterations in brain dynamics. Fitting the model to phase-lag index (PLI) functional connectivity, they showed that the phase dynamics are governed primarily by a normalised coupling parameter reflecting the balance between interregional coupling and local excitability, rather than by either quantity independently. They further reported that this balance is shifted in glioma patients toward stronger effective global interactions, and that tumour-related regions contribute to this shift in connectotomy analyses. These results suggest that glioma alters not only local neural activity, but also the relative contribution of large-scale network interactions to whole-brain dynamics.
+In this project, we reproduce the main dynamical findings of Alexandersen et al.~\cite{Alexandersen2025} and extend their connectotomy framework. We first validate the Hopf model in reduced settings and then reproduce the empirical network-level results, including the approximate scaling relation between coupling strength and excitability, the shift toward higher fitted coupling in glioma, and the reduction in fitted coupling after connectotomy. We then extend the analysis by performing systematic virtual lesioning across all 78 AAL regions, producing a region-wise atlas of coupling drivers. This allows us to move beyond grouped tumour regions and test whether the elevated coupling observed in glioma can be resolved into a more detailed spatial pattern.
+Our aims are therefore twofold. First, we test whether the principal claims of the original study can be recovered within our implementation of the Hopf whole-brain model. Second, we ask whether the connectotomy effect can be generalised into a whole-brain regional analysis and related to structural network organisation. In particular, we examine whether the strongest lesioning effects are concentrated in specific brain regions and whether they are associated with graph-theoretic measures of structural importance. By combining reproduction with targeted extension, we aim to clarify how glioma-related pathology may reshape the balance between local oscillatory dynamics and interregional coupling in whole-brain models.
 
 
 \section{Methods}
@@ -163,6 +164,74 @@ Finally, we reproduced the functional connectotomy analysis by removing tumour-r
     }
     \label{fig:network_connectotomy}
 \end{figure*}
+
+
+
+
+\subsection{Virtual lesioning atlas}
+To extend the connectotomy analysis beyond the predefined tumour-region sets used in the original paper, we evaluated the lesioning effect of all 78 AAL regions on the fitted optimal coupling. The resulting region-wise atlas showed that lesioning effects were spatially heterogeneous rather than uniform across the brain (Fig.~\ref{fig:ranked_dk}). In the glioma fit, a subset of regions produced noticeably larger changes in the optimal coupling than the rest, whereas the control profile was comparatively flatter when shown in the same regional order. This indicates that the elevated coupling required to reproduce the glioma functional connectivity is driven disproportionately by specific regions rather than being distributed evenly across the network.
+To isolate disease-specific effects, we compared the lesioning responses in glioma and control using the differential score
+\[
+\Delta K_i^{\mathrm{diff}}=\Delta K_i^{\mathrm{glioma}}-\Delta K_i^{\mathrm{control}}.
+\]
+The resulting differential atlas identified a subset of regions whose masking reduced the fitted coupling more strongly in glioma than in control (Fig.~\ref{fig:differential_atlas}). The strongest positive differential effects were concentrated mainly in frontal and medial regions, including bilateral medial orbital and superior medial frontal areas, together with posterior cingulate and a smaller number of occipital and parietal regions. In contrast, several sensorimotor, insular, and subcortical regions showed negative differential effects, indicating weaker or more control-like lesioning responses. Taken together, these results extend the original connectotomy analysis from grouped tumour regions to a region-resolved whole-brain map of candidate coupling drivers.
+
+\subsection{Relation to structural connectivity}
+We next asked whether the strongest virtual-lesioning effects could be explained by the structural importance of the affected regions. Degree and weighted strength were not significantly associated with lesioning effect size in either cohort (control: degree $\rho=0.07$, $p=5.28\times10^{-1}$; strength $\rho=-0.04$, $p=7.36\times10^{-1}$; glioma: degree $\rho=0.01$, $p=9.55\times10^{-1}$; strength $\rho=-0.05$, $p=6.81\times10^{-1}$; Fig.~\ref{fig:hubness_vs_dk}). By contrast, eigenvector centrality showed a significant positive association with lesioning effect size in both cohorts, with a stronger relationship in glioma than in control (control: $\rho=0.32$, $p=4.51\times10^{-3}$; glioma: $\rho=0.41$, $p=1.94\times10^{-4}$; Fig.~\ref{fig:hubness_vs_dk}). Thus, the strongest coupling drivers are not simply the nodes with the largest number or weight of connections, but are more closely related to globally influential regions in the structural network.
+Overall, the extension suggests that the connectotomy effect reported in the original paper is not only recoverable at the level of grouped tumour regions, but can be resolved into a whole-brain atlas of region-specific coupling drivers, with the clearest glioma-specific effects emerging in a subset of structurally influential frontal and medial regions.
+This regional pattern was also broadly consistent with the tumour-region grouping used in the original paper, supporting the interpretation that the strongest lesioning drivers overlap with tumour-associated regions.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{../figures/hopf model/virtual lesioning/fig1_ranked_dK.png}
+    \caption{
+    Region-wise virtual-lesioning effects on fitted coupling. Top: glioma cohort lesioning effect $\Delta K$ for all 78 AAL regions, ranked by effect size. Bottom: control-cohort lesioning effects shown in the same regional order. Regions are coloured by large-scale network affiliation. The glioma profile shows a more structured and regionally selective pattern than the control profile.
+    }
+    \label{fig:ranked_dk}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{../figures/hopf model/virtual lesioning/fig3_differential_atlas.png}
+    \caption{
+    Glioma-specific virtual-lesioning effect per region, quantified by $\Delta K_i^{\mathrm{glioma}}-\Delta K_i^{\mathrm{control}}$. Red labels indicate regions belonging to the tumour-region set used in the original paper. Positive values indicate regions whose masking reduces fitted coupling more strongly in glioma than in control.
+    }
+    \label{fig:differential_atlas}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png}
+    \caption{
+    Relationship between structural hubness and virtual-lesioning effect size. Degree and weighted strength show no significant association with lesioning effects, whereas eigenvector centrality is positively associated with lesioning effect size in both control and glioma fits, with a stronger relationship in glioma.
+    }
+    \label{fig:hubness_vs_dk}
+\end{figure*}
+
+
+
+
+
+
+\section{Discussion}
+In this project, we reproduced the central dynamical findings of Alexandersen et al.~\cite{Alexandersen2025} and extended their connectotomy framework to a region-resolved virtual-lesioning atlas. At the reproduction level, our results support the main claim of the original paper: phase-based functional connectivity in the Hopf whole-brain model is governed primarily by the balance between interregional coupling and local excitability, rather than by either parameter independently. In particular, we recovered the approximate scaling relation $K \propto \sqrt{\lambda}$ and found that the best-fitting parameter region lies at positive values of $\lambda$, consistent with the original study. We further reproduced the shift toward higher fitted coupling in the glioma cohort and the connectotomy result that removing tumour-related regions from the fitting comparison tends to reduce the optimal coupling, supporting the interpretation that tumour-associated regions contribute to the elevated interregional influence observed in glioma.
+A key implication of the reproduction is that parameter interpretation in whole-brain Hopf models must be treated carefully. The results do not suggest that the raw coupling parameter $K$ alone is the most meaningful descriptor of system behaviour. Rather, both the reduced-model analyses and the empirical network fitting indicate that the relevant quantity is the normalised coupling $\kappa = K/\sqrt{\lambda}$, which expresses the balance between global interactions and local oscillatory dynamics. This is important because it reframes the glioma-control difference not simply as ``more coupling,'' but as a shift in the relative contribution of interregional interactions compared with local excitability. In that sense, the pathology appears to alter the effective balance of scales in the model, increasing the extent to which global network interactions shape the observed functional connectivity.
+The functional connectotomy analysis provides further support for this interpretation. In both the original paper and our reproduction, tumour-related regions were not removed from the network model itself, but from the comparison between simulated and empirical functional connectivity. The resulting decrease in fitted coupling after connectotomy suggests that these regions contribute disproportionately to the elevated coupling required to match the glioma data. At the same time, the effect is not uniform across patients or region groups, which is consistent with the heterogeneity of glioma and with the relatively small cohort size used in the original study. Therefore, the connectotomy result is best interpreted as evidence for a broad trend rather than a strictly localised or deterministic mechanism.
+Our extension developed this idea further by replacing the predefined tumour-region sets with a systematic virtual-lesioning analysis over all 78 AAL regions. This showed that the connectotomy effect can be resolved into a region-wise atlas of coupling drivers. The lesioning effects were spatially heterogeneous: most regions had little influence on the fitted optimal coupling, while a smaller subset produced substantially larger shifts. Moreover, the glioma fit showed a more structured and selective lesioning profile than the control fit, and the differential atlas identified a subset of regions whose contribution to coupling was stronger in glioma than in control. These findings suggest that the elevated coupling observed in glioma is not a diffuse whole-brain effect, but is instead driven disproportionately by specific regions.
+An important result of the extension is that the strongest lesioning effects were associated with eigenvector centrality, but not with degree or weighted strength. This indicates that the regions acting as coupling drivers are not simply those with the largest number of connections or the greatest total connection weight. Instead, they are more closely related to globally influential nodes in the structural network. This distinction matters because it suggests that the connectotomy effect is not reducible to a trivial hubness effect. The disease-specific coupling drivers appear to be embedded in important parts of the network architecture, but their contribution is still selective rather than generic. In other words, glioma-related alterations may preferentially amplify the role of structurally influential regions in shaping whole-brain phase synchronisation.
+Taken together, these results extend the conclusions of Alexandersen et al.~\cite{Alexandersen2025} in two ways. First, they support the original interpretation that tumour-associated pathology shifts whole-brain dynamics toward stronger effective interregional coupling. Second, they show that this shift can be spatially refined into a region-wise atlas of candidate coupling drivers, with the clearest glioma-specific effects emerging in a limited subset of frontal and medial regions. This suggests that glioma-related alterations in functional connectivity are not only global in character, but are also shaped disproportionately by specific structurally influential regions.
+
+
+\section{Limitations}
+Several limitations should be considered when interpreting these results. First, the Hopf whole-brain model is a simplified phenomenological description of neuronal dynamics, so fitted parameters should be interpreted as model-level descriptors rather than direct physiological quantities. Second, both the reproduction and the extension are based on static, phase-based functional connectivity derived from PLI, and therefore do not capture temporal fluctuations or more complex metastable dynamics. Third, the framework inherits simplifying assumptions from the original study, including the use of a fixed structural connectome, thresholded PLI matrices, and predominantly global parameters, which may reduce sensitivity to subject-specific or region-specific mechanisms. Finally, the virtual-lesioning atlas is a model-based measure of how strongly masking a region changes fitted coupling, and should not be interpreted as a direct causal map of tumour influence in vivo.
+
+\section{Future directions}
+
+
+\section{Conclusion}
+In this project, we reproduced the main findings of Alexandersen et al.~\cite{Alexandersen2025} using a Hopf whole-brain model of phase-based functional connectivity. In particular, we recovered the approximate scaling relation between coupling strength and excitability, showing that the model dynamics are organised primarily by the normalised coupling $\kappa = K/\sqrt{\lambda}$, and we reproduced the shift toward higher fitted coupling in the glioma cohort. We also recovered the connectotomy result that removing tumour-related regions from the fitting comparison tends to reduce the optimal coupling, supporting the interpretation that tumour-associated regions contribute to the elevated interregional influence observed in glioma.
+Building on this reproduced framework, we extended the analysis with a region-wise virtual-lesioning atlas. This showed that the coupling abnormalities identified by the original connectotomy analysis are not distributed uniformly across the brain, but are driven disproportionately by a subset of regions. Moreover, the strongest lesioning effects in glioma were associated more closely with eigenvector centrality than with degree or weighted strength, suggesting that the most important coupling drivers are globally influential regions rather than simply the most locally connected nodes.
+Overall, these findings support the view that glioma-related alterations in whole-brain dynamics reflect a shift in the balance between local oscillatory activity and large-scale network interactions. More broadly, they show that connectotomy-style perturbation analyses can be extended beyond predefined tumour regions to generate region-resolved maps of candidate coupling drivers, providing a useful framework for future studies of how local pathology reshapes global brain dynamics.
 
 \begin{thebibliography}{99}
 \bibitem{Deco2011}
