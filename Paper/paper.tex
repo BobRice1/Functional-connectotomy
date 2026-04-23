@@ -101,6 +101,17 @@ To assess whether strong coupling drivers coincide with structurally important r
 
 Together, these analyses produced a region-wise atlas of coupling drivers and tested whether the connectotomy effect can be explained by the structural importance of the affected regions.
 
+\subsection{Structural connectivity perturbation}
+As a second extension, we tested whether anatomical disruption of the coupling-driver regions identified by the virtual-lesioning atlas alters the fitted Hopf parameters in the control model. In contrast to the virtual-lesioning analysis, which removed regions only from the PLI comparison stage, this analysis directly perturbed the structural connectivity matrix used in the model simulations.
+
+The empirical structural connectivity matrix was loaded and normalised by its maximum entry for numerical stability. The fitting target was the raw empirical control PLI matrix. Driver regions were selected from the virtual-lesioning results by ranking regions according to their mean control lesioning score, and the three regions with the smallest mean $\Delta K$ values were chosen as perturbation targets. These regions correspond to nodes whose virtual removal produced the largest downward shift in the fitted control coupling, and were therefore interpreted as the strongest control coupling drivers.
+
+Structural damage was implemented as a dose-response manipulation applied to the selected nodes. For a damage level $d \in \{0,0.25,0.5,0.75,1.0\}$, the row of the structural connectivity matrix corresponding to each selected node was multiplied by $1-d$, and the resulting matrix was then symmetrised by averaging it with its transpose.
+
+For each damaged matrix, the coupled Hopf model was refit to the empirical control PLI using a two-dimensional grid search over global coupling strength $K$ and excitability $\lambda$. The intrinsic frequency was fixed at $10$ Hz for all nodes, with $C=1$, sampling frequency $f_s=200$, total simulation time $t_{\mathrm{total}}=10.0$, and discarded transient time $t_{\mathrm{discard}}=2.0$. A single random complex initial condition with scale $0.1$ was generated using fixed random seed $42$ and used consistently across all perturbation conditions. Numerical integration was performed using \texttt{solve\_ivp} with relative tolerance $10^{-6}$ and absolute tolerance $10^{-8}$. The parameter search evaluated six values of $K$ linearly spaced between $0.1$ and $1.5$ and six values of $\lambda$ linearly spaced between $-0.5$ and $2.0$.
+
+For each parameter pair, the real-valued node signals were simulated, band-pass filtered in the alpha band (8-12 Hz) using a fourth-order Butterworth filter, and transformed into instantaneous phases via the Hilbert transform. The simulated PLI matrix was then computed and model fit was quantified as the Pearson correlation between the upper-triangular entries of the simulated and empirical PLI matrices. For each damage level, the best-fitting parameters $K^{*}$ and $\lambda^{*}$, the maximum correlation value, the corresponding PLI matrix, and the full correlation landscape were retained. The resulting dose-response relationships were used to assess how structural damage to the selected driver regions affected inferred coupling strength, global excitability, and overall fit quality.
+
 
 
 
@@ -212,6 +223,23 @@ This regional pattern was also broadly consistent with the tumour-region groupin
 
 
 
+
+\subsection{Structural connectivity perturbation}
+We next tested whether directly damaging the structural connections of the strongest control coupling drivers would alter the fitted coupling in the control model. Using the virtual-lesioning atlas, the three most influential control regions were identified as left posterior cingulate cortex, left medial orbitofrontal cortex, and right medial orbitofrontal cortex. These regions were then subjected to graded structural perturbation in the empirical control connectome, as identified by their low mean $\Delta K$ values in the virtual-lesioning analysis.
+
+Across all damage levels, the fitted optimal coupling remained fixed at
+\[
+K^{*}=0.38,
+\]
+and the fitted excitability remained fixed at
+\[
+\lambda^{*}=0.
+\]
+Thus, within the parameter grid explored in this perturbation analysis, progressive structural damage to these driver regions did not produce a measurable shift in the best-fitting model regime. The retained correlation landscapes likewise did not show an obvious systematic shift in the location of the high-fit region across damage levels. In particular, the perturbation did not drive the control fit toward a distinctly larger coupling value that would resemble the glioma-shifted regime observed in the main reproduction. However, given the relatively coarse parameter grid, smaller shifts in the optimal region may not be fully resolved. 
+
+The goodness of fit changed only weakly across the dose-response sweep and exhibited no clear monotonic trend. The maximum Pearson correlation between simulated and empirical control PLI was $0.0098$ in the undamaged case, rose slightly to $0.0099$ at 25\% damage, dipped to $0.0087$ at 50\% damage, and then increased to $0.0101$ at 75\% damage and $0.0135$ at the strongest perturbation level. Although this suggests a small improvement in fit at the strongest perturbation levels, the effect size remained modest and did not coincide with any change in the fitted $(K,\lambda)$ optimum. Moreover, the absolute correlation values remained low across all conditions, indicating that the model fit in this perturbation setting was weak overall.
+
+Taken together, these results indicate that, in the present perturbation implementation and parameter range, damaging the structural connections of the top control drivers was not sufficient to reproduce the elevated-coupling signature associated with glioma. The extension therefore provides only limited support for a simple anatomy-only explanation of the glioma-control difference, and suggests that either stronger perturbations, a wider parameter search, or more targeted region selection may be required to reveal a clearer structural dose-response effect.
 
 \section{Discussion}
 In this project, we reproduced the central dynamical findings of Alexandersen et al.~\cite{Alexandersen2025} and extended their connectotomy framework to a region-resolved virtual-lesioning atlas. At the reproduction level, our results support the main claim of the original paper: phase-based functional connectivity in the Hopf whole-brain model is governed primarily by the balance between interregional coupling and local excitability, rather than by either parameter independently. In particular, we recovered the approximate scaling relation $K \propto \sqrt{\lambda}$ and found that the best-fitting parameter region lies at positive values of $\lambda$, consistent with the original study. We further reproduced the shift toward higher fitted coupling in the glioma cohort and the connectotomy result that removing tumour-related regions from the fitting comparison tends to reduce the optimal coupling, supporting the interpretation that tumour-associated regions contribute to the elevated interregional influence observed in glioma.
