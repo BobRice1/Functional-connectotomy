@@ -242,7 +242,7 @@ We next tested whether directly damaging the structural connections of the contr
 
 At baseline ($d=0$), the fitted coupling was consistently higher for the glioma target than for the control target across all tested regions, reproducing the cohort shift seen in the main analysis. For the driver set, mean fitted values were typically $K^{*}_{\mathrm{control}} \approx 34$--$35$ and $K^{*}_{\mathrm{glioma}} \approx 36$--$37$, with similar baseline values in the non-driver set. The full dose-response curves are shown in Fig.~\ref{fig:scpert_dose_response}.
 
-Progressive structural damage did change the fitted coupling, but not in the hypothesised driver-specific direction. Across the mild damage range ($0 \leq d \leq 0.5$), the slope of $K^{*}_{\mathrm{control}}$ versus damage had mean $-0.752$ for driver regions and mean $-1.946$ for non-driver regions. Over the full range ($0 \leq d \leq 1$), the corresponding mean slopes were $-2.583$ for drivers and $-2.497$ for non-drivers. Thus, damaging the top coupling drivers did not produce larger or steeper coupling shifts than damaging the null regions; if anything, the mild-range effect was numerically stronger in the non-driver set. The perturbation analysis therefore did not support the prediction that virtual-lesioning analysis driver status would translate directly into heightened structural sensitivity in the structural-perturbation analysis (Fig.~\ref{fig:scpert_sensitivity}).
+Progressive structural damage did change the fitted coupling, but not in the hypothesised driver-specific direction. Across the mild damage range ($0 \leq d \leq 0.5$), the slope of $K^{*}_{\mathrm{control}}$ versus damage had mean $-0.752$ for driver regions and mean $-1.946$ for non-driver regions. Over the full range ($0 \leq d \leq 1$), the corresponding mean slopes were $-2.583$ for drivers and $-2.497$ for non-drivers. Thus, damaging the top coupling drivers did not produce larger or steeper coupling shifts than damaging the null regions; if anything, the mild-range effect was numerically stronger in the non-driver set. The perturbation analysis therefore did not support the prediction that virtual-lesioning analysis driver status would translate directly into heightened structural sensitivity in the structural-perturbation analysis.
 
 The perturbation also failed to push the control fit toward the glioma-like coupling regime. Averaged across driver regions, the control-glioma gap in fitted coupling was $\langle K^{*}_{\mathrm{control}} \rangle - \langle K^{*}_{\mathrm{glioma}} \rangle = -1.629$ at baseline, $-1.770$ at $d=0.5$, and $-3.584$ at full damage. The corresponding non-driver gap changed from $-1.339$ at baseline to $-1.832$ at $d=0.5$ and $-2.883$ at full damage. Rather than converging toward the glioma fit, the control fit therefore moved further away from it as damage increased, especially under extreme ablation (Fig.~\ref{fig:scpert_convergence}).
 
@@ -255,15 +255,6 @@ Taken together, these results indicate that direct structural damage alone was n
     Dose-response of fitted coupling under structural damage. Solid lines show $K^{*}$ values obtained when fitting to the control PLI target, and dashed lines show fits to the glioma target, for the 10 virtual-lesioning analysis driver regions and 5 non-driver comparison regions. Although fitted coupling changes with increasing damage, the trajectories do not show a consistent driver-specific amplification and the control curves do not move toward the glioma-like regime.
     }
     \label{fig:scpert_dose_response}
-\end{figure*}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=0.78\textwidth]{../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png}
-    \caption{
-    Per-region structural sensitivity of the control fit over the mild damage range ($0 \leq d \leq 0.5$). Bars show the slope of $K^{*}_{\mathrm{control}}$ versus damage for each perturbed region, ranked from largest to smallest, with driver regions highlighted. Contrary to the original hypothesis, driver regions do not separate clearly from the non-driver set by exhibiting systematically steeper damage responses.
-    }
-    \label{fig:scpert_sensitivity}
 \end{figure*}
 
 \begin{figure}[t]
