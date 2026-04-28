@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local runtime/cache directories
+.matplotlib/
+.ipynb_checkpoints/
+
+# LaTeX build products
+Paper/*.aux
+Paper/*.bbl
+Paper/*.blg
+Paper/*.fdb_latexmk
+Paper/*.fls
+Paper/*.log
+Paper/*.out
+Paper/*.synctex.gz
+
+# Local environments
+.venv/
