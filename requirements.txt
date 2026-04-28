@@ -2,3 +2,5 @@ numpy
 scipy
 matplotlib
 joblib
+ipykernel
+notebook

@@ -85,19 +85,6 @@ $env:HOPF_N_JOBS = "8"   # PowerShell
 Existing cached `.npz` files are intentionally kept in `data/` so downstream
 notebooks can be inspected without rerunning the long sweeps.
 
-## Fast Validation
-
-The lightweight checks avoid expensive scientific reruns:
-
-```bash
-$env:PYTHONDONTWRITEBYTECODE = "1"
-python -m unittest discover -s tests
-python -m py_compile src\hopf_model.py src\signal_processing.py src\network_analysis.py src\project_paths.py src\results_io.py scripts\patch_nb06_robustness.py
-```
-
-The tests cover deterministic initial conditions, Hopf simulation shapes, PLI
-matrix behavior, network helper consistency, perturbation helpers, and cache
-schema validation.
 
 ## Paper Reference
 
