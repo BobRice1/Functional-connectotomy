@@ -37,6 +37,7 @@ Alexandersen et al.~\cite{Alexandersen2025} used a Hopf whole-brain model to inv
 In this report, \emph{fitted coupling} refers to the value of the model's global coupling parameter $K$ that gives the best match between simulated and empirical PLI matrices. Because the model fit is governed by $\kappa = K/\sqrt{\lambda}$, fitted coupling should be interpreted as an effective model-level measure of interregional influence relative to local oscillatory amplitude, not as a direct measurement of anatomical white-matter strength. We also distinguish two forms of lesion analysis. \emph{Functional connectotomy} or \emph{virtual lesioning} removes a region from the PLI comparison only: the region remains present in the simulation, but its row and column are excluded when correlating simulated and empirical connectivity. \emph{Structural perturbation} instead changes the simulated network itself by weakening the anatomical connections of a selected region before running the model.
 
 In this project, we first reproduce the main dynamical findings of Alexandersen et al.~\cite{Alexandersen2025}: the approximate $K/\sqrt{\lambda}$ scaling relation, the shift toward higher fitted coupling in glioma, and the reduction in fitted coupling after tumour-region connectotomy. We then extend the original connectotomy analysis in two targeted ways. The original paper focused on tumour-related region sets; our first extension applies the same masking logic systematically to every AAL region, producing a whole-brain atlas of region-wise coupling sensitivity. Our second extension asks whether these functional sensitivity results correspond to anatomical vulnerability by directly weakening the structural connections of selected functional driver regions before simulation. Together, these analyses distinguish regions that influence the fitting objective from regions whose structural disconnection is sufficient to reproduce glioma-like model behaviour.
+For clarity, Table~\ref{tab:hypotheses_overview} summarises only the hypotheses associated with the extension analyses.
 
 \section{Methods}
 \subsection{Reproduction of the original model}
@@ -88,6 +89,24 @@ Structural perturbation & Not tested as direct anatomical damage & Selected regi
 \bottomrule
 \end{tabular}
 \label{tab:reproduction_extension}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Hypotheses and expectations for the extension analyses only.}
+\begin{tabular}{p{0.20\textwidth}p{0.54\textwidth}p{0.16\textwidth}}
+\toprule
+\textbf{Analysis} & \textbf{Hypothesis or expectation} & \textbf{Outcome} \\
+\midrule
+Virtual lesioning atlas & Structurally important regions, especially hubs, should produce larger virtual-lesioning shifts in fitted coupling than peripheral regions. & Partially supported \\
+Virtual lesioning atlas & Top glioma-specific virtual-lesioning drivers should overlap significantly with the tumour-region set used by Alexandersen et al.~\cite{Alexandersen2025}. & Partially supported \\
+SC perturbation & Directly damaging top virtual-lesioning drivers should produce steeper $K^*$ dose-response shifts than damaging non-driver regions. & Not supported \\
+SC perturbation & Damaging top drivers in the control model should push fitted control coupling upward toward the glioma regime. & Not supported \\
+Extension synthesis & Regions that are strong functional drivers in Part A should also be strong anatomical sensitivity drivers in Part B (the ``consistent hub'' hypothesis). & Not supported \\
+\bottomrule
+\end{tabular}
+\label{tab:hypotheses_overview}
 \end{table*}
 
 \subsection{Glioma fitting and connectotomy analyses}
@@ -261,6 +280,16 @@ To compare the two extension analyses directly, we next tested whether regions t
 \end{figure}
 
 Consistent with this separation between functional and structural sensitivity, the perturbation also failed to push the control fit toward the glioma-like coupling regime. Averaged across driver regions, the control-glioma gap in fitted coupling was $\langle K^{*}_{\mathrm{control}} \rangle - \langle K^{*}_{\mathrm{glioma}} \rangle = -1.629$ at baseline, $-1.770$ at $d=0.5$, and $-3.584$ at full damage. The corresponding non-driver gap changed from $-1.339$ at baseline to $-1.832$ at $d=0.5$ and $-2.883$ at full damage. Rather than converging toward the glioma fit, the control fit therefore moved further away from it as damage increased, especially under extreme ablation (Fig.~\ref{fig:scpert_convergence}).
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.94\columnwidth]{../figures/hopf model/sc perturbation/fig3_convergence.png}
+    \caption{
+    Change in the control-glioma coupling gap under structural damage. Plotted is the mean difference $\langle K^{*}_{\mathrm{control}} \rangle - \langle K^{*}_{\mathrm{glioma}} \rangle$ across driver and non-driver groups as a function of damage fraction. More negative values indicate that the control fit lies further below the glioma fit. Damage increases this separation rather than producing convergence.
+    }
+    \label{fig:scpert_convergence}
+\end{figure}
+
 Taken together, these results indicate that direct structural damage alone was not sufficient to reproduce the elevated-coupling signature associated with glioma. The perturbation manipulation altered fitted coupling, but it did not selectively amplify the effect of the strongest functional drivers and did not generate control-to-glioma convergence. Within this implementation, the glioma shift therefore cannot be explained as a simple consequence of weakening the structural connectivity of the virtual-lesioning analysis driver regions.
 
 \begin{figure}[t]
@@ -280,15 +309,6 @@ Taken together, these results indicate that direct structural damage alone was n
     }
     \label{fig:scpert_sensitivity}
 \end{figure*}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\columnwidth]{../figures/hopf model/sc perturbation/fig3_convergence.png}
-    \caption{
-    Change in the control-glioma coupling gap under structural damage. Plotted is the mean difference $\langle K^{*}_{\mathrm{control}} \rangle - \langle K^{*}_{\mathrm{glioma}} \rangle$ across driver and non-driver groups as a function of damage fraction. More negative values indicate that the control fit lies further below the glioma fit. Damage increases this separation rather than producing convergence.
-    }
-    \label{fig:scpert_convergence}
-\end{figure}
 
 \section{Discussion}
 
