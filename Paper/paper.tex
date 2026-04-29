@@ -67,7 +67,9 @@ to test the paper's claim that the phase dynamics are approximately invariant wh
 \centering
 \small
 \caption{Hypotheses and expectations for the extension analyses only.}
-\begin{tabular}{p{0.20\textwidth}p{0.54\textwidth}p{0.16\textwidth}}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{0.22\textwidth}p{0.52\textwidth}p{0.16\textwidth}}
 \toprule
 \textbf{Analysis} & \textbf{Hypothesis or expectation} & \textbf{Outcome} \\
 \midrule
@@ -75,9 +77,11 @@ Virtual lesioning atlas & Structurally important regions, especially hubs, shoul
 Virtual lesioning atlas & Top glioma-specific virtual-lesioning drivers should overlap significantly with the tumour-region set used by Alexandersen et al.~\cite{Alexandersen2025}. & Partially supported \\
 SC perturbation & Directly damaging top virtual-lesioning drivers should produce steeper $K^*$ dose-response shifts than damaging non-driver regions. & Not supported \\
 SC perturbation & Damaging top drivers in the control model should push fitted control coupling upward toward the glioma regime. & Not supported \\
-Extension synthesis & Regions that are strong functional drivers in Part A should also be strong anatomical sensitivity drivers in Part B (the ``consistent hub'' hypothesis). & Not supported \\
+Extension synthesis & Regions that are strong functional drivers in Virtual lesioning atlas should also be strong anatomical sensitivity drivers in SC perturbation (the ``consistent hub'' hypothesis). & Not supported \\
 \bottomrule
 \end{tabular}
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{6pt}
 \label{tab:hypotheses_overview}
 \end{table*}
 
