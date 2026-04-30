@@ -160,11 +160,11 @@ INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ../figures/hopf model/network stability/fig2_combined.png
-INPUT ../figures/hopf model/network stability/fig2_combined.png
-INPUT ../figures/hopf model/network stability/fig2_combined.png
-INPUT ../figures/hopf model/network stability/fig2_combined.png
-INPUT ../figures/hopf model/network stability/fig2_combined.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
