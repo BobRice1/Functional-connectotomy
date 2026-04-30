@@ -195,7 +195,10 @@ Finally, we reproduced the functional connectotomy analysis by removing tumour-r
     \centering
     \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
     \caption{
-    Log--log parameter search for the empirical network model. Across multiple initial conditions, the best-fit region follows approximately diagonal bands corresponding to constant $\kappa = K/\sqrt{\lambda}$, indicating that the goodness of fit is largely controlled by the normalised coupling rather than by $K$ and $\lambda$ independently.
+    \textbf{Log--log parameter search for the empirical control network.}
+    (a) Mean model fit across initial conditions, computed as the Pearson correlation between simulated and empirical control matrices over the $K$--$\lambda$ grid.
+    (b--c) Fit landscapes from two representative initial conditions, showing that the high-fit region is reproducible across runs.
+    The dashed diagonal line indicates constant normalised coupling, $\kappa = K/\sqrt{\lambda}$, illustrating that the best-fitting region is organised primarily by the balance between global coupling strength and local excitability rather than by either parameter independently.
     }
     \label{fig:network_scaling}
 \end{figure*}
@@ -204,7 +207,12 @@ Finally, we reproduced the functional connectotomy analysis by removing tumour-r
     \centering
     \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig4_glioma_comparison.png}
     \caption{
-    Comparison of fitted parameter landscapes for the control and glioma cohorts. The optimal coupling curve lies systematically above the control curve, corresponding to a larger fitted normalised coupling for the glioma cohort. This indicates a shift toward stronger global interactions in the glioma network dynamics.
+    \textbf{Comparison of fitted parameter landscapes for the control and glioma cohorts.}
+    (a) Optimal coupling strength $K^*$ as a function of excitability $\lambda$ for the control and glioma PLI targets.
+    The glioma curve lies consistently above the control curve, indicating that the glioma target requires higher fitted coupling. 
+    (b) Control-cohort fit landscape over the $K$--$\lambda$ grid, with the dashed line showing the fitted constant-$\kappa$ relation.
+    (c) Glioma-cohort fit landscape over the same grid, showing a higher fitted normalised coupling than control.
+    Together, the panels indicate a shift toward stronger effective interregional coupling in the glioma model fit.
     }
     \label{fig:network_glioma}
 \end{figure*}
