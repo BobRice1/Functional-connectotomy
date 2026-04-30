@@ -55,7 +55,7 @@ Alexandersen et al.~\cite{Alexandersen2025} used a Hopf whole-brain model to inv
 
 In this report, \emph{fitted coupling} refers to the value of the model's global coupling parameter $K$ that gives the best match between simulated and empirical PLI matrices. Because the model fit is governed by $\kappa = K/\sqrt{\lambda}$, fitted coupling should be interpreted as an effective model-level measure of interregional influence relative to local oscillatory amplitude, not as a direct measurement of anatomical white-matter strength. We also distinguish two forms of lesion analysis. \emph{Functional connectotomy} or \emph{virtual lesioning} removes a region from the PLI comparison only: the region remains present in the simulation, but its row and column are excluded when correlating simulated and empirical connectivity. \emph{Structural perturbation} instead changes the simulated network itself by weakening the anatomical connections of a selected region before running the model.
 
-In this project, we first reproduce the main dynamical findings of Alexandersen et al.~\cite{Alexandersen2025}: the approximate $K/\sqrt{\lambda}$ scaling relation, the shift toward higher fitted coupling in glioma, and the reduction in fitted coupling after tumour-region connectotomy. We then extend the original connectotomy analysis in two targeted ways. The original paper focused on tumour-related region sets; our first extension applies the same masking logic systematically to every AAL region, producing a whole-brain atlas of region-wise coupling sensitivity. Our second extension tests whether regions that strongly influence the fitting objective under virtual lesioning also have a correspondingly large effect when their structural connections are directly weakened before simulation. Together, these analyses test whether functional connectotomy reflects underlying anatomical damage vulnerability, or instead primarily captures sensitivity of the model fitting objective.
+In this project, we first reproduce the main dynamical findings of Alexandersen et al.~\cite{Alexandersen2025}: the approximate $K/\sqrt{\lambda}$ scaling relation, the shift toward higher fitted coupling in glioma, and the reduction in fitted coupling after tumour-region connectotomy, corresponding to the reproduction analyses shown in Figs.~\ref{fig:network_matrices}--\ref{fig:network_connectotomy}. We then extend the original connectotomy analysis in two targeted ways, shown in Figs.~\ref{fig:ranked_dk}--\ref{fig:scpert_convergence}. The original paper focused on tumour-related region sets; our first extension applies the same masking logic systematically to every AAL region, producing a whole-brain atlas of region-wise coupling sensitivity. Our second extension tests whether regions that strongly influence the fitting objective under virtual lesioning also have a correspondingly large effect when their structural connections are directly weakened before simulation. Together, these analyses test whether functional connectotomy reflects underlying anatomical damage vulnerability, or instead primarily captures sensitivity of the model fitting objective.
 For clarity, Table~\ref{tab:hypotheses_overview} summarises only the hypotheses associated with the extension analyses.
 
 \section{Methods}
@@ -142,6 +142,32 @@ To assess whether strong functional coupling drivers coincide with structurally 
 
 Together, these analyses produced a region-wise atlas of functional coupling drivers and tested whether the connectotomy effect can be explained by the structural importance of the affected regions.
 
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/validation and fitting/fig1_network_fitting.png}
+    \caption{
+    \textbf{Empirical-scale network fitting.}
+    (a) Empirical structural connectivity matrix used to define the 78-node coupled Hopf network.
+    (b) Simulated PLI matrix at the best-fitting control-cohort parameter combination, shown here for \(K = 60.00\) and \(\lambda = 13.06\).
+    (c) Empirical control-cohort PLI matrix.
+    (d) Empirical glioma-cohort PLI matrix.
+    The simulated matrix reproduces broad block-structured organisation also visible in the empirical data, supporting the use of the coupled Hopf network as a coarse-grained model of large-scale functional connectivity.
+    }
+    \label{fig:network_matrices}
+\end{figure*}
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
+    \caption{
+    \textbf{Log--log parameter search for the empirical control network.}
+    (a) Mean model fit across initial conditions, computed as the Pearson correlation between simulated and empirical control matrices over the $K$--$\lambda$ grid.
+    (b--c) Fit landscapes from two representative initial conditions, showing that the high-fit region is reproducible across runs.
+    The dashed diagonal line indicates constant normalised coupling, $\kappa = K/\sqrt{\lambda}$, illustrating that the best-fitting region is organised primarily by the balance between global coupling strength and local excitability rather than by either parameter independently.
+    }
+    \label{fig:network_scaling}
+\end{figure*}
+
 \subsection{Structural connectivity perturbation}
 As a second extension, we tested whether anatomical damage to regions identified by the virtual-lesioning atlas changes the fitted global coupling in the whole-brain Hopf model. In contrast to the virtual-lesioning analysis, which removed regions only from the PLI comparison stage, this analysis directly perturbed the structural connectivity matrix used in the simulations and then refit the model.
 This analysis therefore differs from virtual lesioning in the order of operations. In virtual lesioning, the full model is simulated first and a region is ignored only when scoring the PLI fit. In structural perturbation, the structural connectivity matrix is modified before the Hopf equations are integrated. The resulting simulated dynamics therefore arise from a damaged connectome.
@@ -160,22 +186,6 @@ This directly tested whether regions identified as important by post-simulation 
 \subsection{Extension synthesis}
 Finally, we compared the two extension analyses directly by asking whether regions identified as strong virtual-lesioning drivers also showed strong sensitivity to structural perturbation. Functional importance was quantified using the absolute control virtual-lesioning effect, \(|\Delta K_{\mathrm{control}}|\), while anatomical sensitivity was quantified using the slope of fitted control coupling, \(K^*_{\mathrm{control}}\), across damage levels, with primary emphasis on the mild damage range \(0 \leq d \leq 0.5\). Their association across the 15 perturbed regions was assessed using Spearman rank correlation. As a topology-only comparator, we also ranked all 78 regions by eigenvector centrality of the same spectral-normalised structural connectivity matrix and tested overlap between top-ranked sets and the tumour-region set using the same hypergeometric overlap test described in Sec.~\ref{sec:vla_methods}.
 
-\begin{figure*}[!t]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/hopf model/validation and fitting/fig1_network_fitting.png}
-    \caption{
-    \textbf{Empirical-scale network fitting.}
-    (a) Empirical structural connectivity matrix used to define the 78-node coupled Hopf network.
-    (b) Simulated PLI matrix at the best-fitting control-cohort parameter combination, shown here for \(K = 60.00\) and \(\lambda = 13.06\).
-    (c) Empirical control-cohort PLI matrix.
-    (d) Empirical glioma-cohort PLI matrix.
-    The simulated matrix reproduces broad block-structured organisation also visible in the empirical data, supporting the use of the coupled Hopf network as a coarse-grained model of large-scale functional connectivity.
-    }
-    \label{fig:network_matrices}
-\end{figure*}
-
-
-
 \section{Results}
 
 \subsection{Reduced-model validation}\label{sec:reduced_validation}
@@ -193,18 +203,6 @@ To quantify model performance, we performed a grid search over coupling strength
 K = \kappa \sqrt{\lambda}.
 \]
 This supports the interpretation that phase-based functional connectivity is governed primarily by the balance between interregional coupling and local excitability, rather than by \(K\) and \(\lambda\) independently.
-
-\begin{figure*}[!t]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
-    \caption{
-    \textbf{Log--log parameter search for the empirical control network.}
-    (a) Mean model fit across initial conditions, computed as the Pearson correlation between simulated and empirical control matrices over the $K$--$\lambda$ grid.
-    (b--c) Fit landscapes from two representative initial conditions, showing that the high-fit region is reproducible across runs.
-    The dashed diagonal line indicates constant normalised coupling, $\kappa = K/\sqrt{\lambda}$, illustrating that the best-fitting region is organised primarily by the balance between global coupling strength and local excitability rather than by either parameter independently.
-    }
-    \label{fig:network_scaling}
-\end{figure*}
 
 \subsection{Glioma-control comparison}
 We then compared the fitted parameter landscapes for the control and glioma cohort averages. Across excitability values, the glioma cohort was shifted toward higher optimal coupling strengths than the control cohort (Fig.~\ref{fig:network_glioma}). This difference was also reflected in the fitted normalised-coupling lines, which gave a larger effective $\kappa$ for glioma than for control. The fitted normalised coupling was \(\kappa_{\mathrm{control}} = 5.51\) for the control cohort and \(\kappa_{\mathrm{glioma}} = 6.02\) for the glioma cohort, corresponding to an approximately \(9.3\%\) increase in the glioma fit. Thus, the reproduced whole-brain model supports the original paper's central claim that glioma-related dynamics are associated with stronger interregional interactions relative to local oscillatory dynamics.
