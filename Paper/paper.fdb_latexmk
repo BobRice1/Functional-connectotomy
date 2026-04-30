@@ -1,25 +1,25 @@
 # Fdb version 4
-["bibtex paper"] 1777374048.84275 "paper.aux" "paper.bbl" "paper" 1777374053.90794 0
-  "./paperNotes.bib" 1777374049.08372 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "./refs.bib" 1777373218.39541 3484 4436f16f6d91cf4bd13a17c964ba7c50 ""
+["bibtex paper"] 1777555165.07782 "paper.aux" "paper.bbl" "paper" 1777555172.38875 0
+  "./paperNotes.bib" 1777555165.3496 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./refs.bib" 1777474121.7767 3482 e82f76b60d391515f7d9c3b6d3abefc7 ""
   "/usr/local/texlive/2025basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "paper.aux" 1777374053.79963 16874 ad5747d0cc61bcb1e339a91c2e0f119e "pdflatex"
+  "paper.aux" 1777555172.28809 21123 180f527a12b6e68fa9ba14c0133c4c79 "pdflatex"
   (generated)
   "paper.bbl"
   "paper.blg"
   (rewritten before read)
-["pdflatex"] 1777374048.86946 "paper.tex" "paper.pdf" "paper" 1777374053.9081 0
-  "../figures/hopf model/network stability/fig2_labelled_matrices.png" 1775072281.68661 474294 bde1faa99dd9d959388c6dd36f69f481 ""
-  "../figures/hopf model/network stability/fig3_loglog_grid.png" 1776881705.58007 772834 192f98144a74f312a96298e59becf04c ""
-  "../figures/hopf model/network stability/fig4_glioma_comparison.png" 1776881705.58304 363866 b11c0ac0c1618168b5a1fe138f075674 ""
+["pdflatex"] 1777555165.12969 "paper.tex" "paper.pdf" "paper" 1777555172.38895 0
+  "../figures/hopf model/network stability/fig2_combined.png" 1777552369.21158 822278 bcf28789d1d9cdf7943e9637e9452b48 ""
+  "../figures/hopf model/network stability/fig3_loglog_grid.png" 1777552369.21384 406871 28f125330a609c40d3afd17dfd65635a ""
+  "../figures/hopf model/network stability/fig4_glioma_comparison.png" 1777552369.21749 648300 20bc06a8f6401cea674c435eb2dd1d2e ""
   "../figures/hopf model/network stability/fig6_8_connectotomy.png" 1776881705.58748 367666 86513167e05b2da432cc40ca665d9007 ""
   "../figures/hopf model/sc perturbation/fig1_dose_response.png" 1777372344.21464 471540 a945f99487e446f031855d558f146b99 ""
   "../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png" 1777238815.21577 181428 351d3362e32e6007c684eae9f6821a0b ""
   "../figures/hopf model/sc perturbation/fig3_convergence.png" 1777238815.21626 117253 452088a3cf9f7419667fcf3593bb09a0 ""
-  "../figures/hopf model/synthesis/fig2_partA_vs_partB.png" 1777238815.21837 195129 2667ff6f6843555f85ecc989f390df73 ""
-  "../figures/hopf model/virtual lesioning/fig1_ranked_dK.png" 1777238815.22071 279328 4674c3a24d79900cb8650c9013c490d1 ""
-  "../figures/hopf model/virtual lesioning/fig3_differential_atlas.png" 1777238815.22489 262004 c5131dfb7f707eaaa4b09fb1cf3cedc0 ""
-  "../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png" 1777238815.22718 550855 79bc716fd25e54a7f1ef25886d1f9ee1 ""
+  "../figures/hopf model/synthesis/fig2_partA_vs_partB.png" 1777555090.35801 272990 1a7cde6f12d11a8dcaeeaf1e863a302d ""
+  "../figures/hopf model/virtual lesioning/fig1_ranked_dK.png" 1777554123.91615 2354738 c1df2b7876a98745ef0dac43106dab68 ""
+  "../figures/hopf model/virtual lesioning/fig3_differential_atlas.png" 1777553379.11504 1909786 5670de8d8b2d47b407cad192c77279ed ""
+  "../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png" 1777554789.00553 623631 11473eee6590b063251c15b8308106d8 ""
   "/Users/gillianmacdonald/Library/texmf/tex/latex/revtex/aps10pt4-2.rtx" 1685563380 4721 1078241377b2832c365c1e433df5a943 ""
   "/Users/gillianmacdonald/Library/texmf/tex/latex/revtex/aps4-2.rtx" 1685563380 16396 0a96d75178570a7978b45d39eb710012 ""
   "/Users/gillianmacdonald/Library/texmf/tex/latex/revtex/revsymb4-2.sty" 1685563380 5569 9d4c16602d5273e0163be33d78a388b1 ""
@@ -116,10 +116,10 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768164710 79187 04b17f8738f833a5a5f7867124477b59 ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1768164699 2663839 27c498f996dab606bc356fc3a62b4299 ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "paper.aux" 1777374053.79963 16874 ad5747d0cc61bcb1e339a91c2e0f119e "pdflatex"
-  "paper.bbl" 1777374048.86127 2579 634a525a6a6a29a38048480d5ade3ec8 "bibtex paper"
-  "paper.out" 1777374053.80085 6340 f1008eb29d60d03d120b74bd5b2b200c "pdflatex"
-  "paper.tex" 1777374022.90146 47989 21ec984bcf2ee30908f91b43f60c9abd ""
+  "paper.aux" 1777555172.28809 21123 180f527a12b6e68fa9ba14c0133c4c79 "pdflatex"
+  "paper.bbl" 1777555165.12782 2577 c4c6accb4922167b2dc6a5311ca9e0d0 "bibtex paper"
+  "paper.out" 1777555172.28943 5848 c89503b8148cf220fcaf69806930076b "pdflatex"
+  "paper.tex" 1777555154.89742 52774 c5a6551f1742055bba70ec8687a8ce75 ""
   (generated)
   "paper.aux"
   "paper.log"

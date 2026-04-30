@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  28 APR 2026 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  30 APR 2026 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,184 +437,180 @@ e
 Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 11.
 \openout3 = `paperNotes.bib'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 85--85
-[]\OT1/cmr/m/n/9 Tumour-related re-gions re-
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
+[]\OT1/cmr/m/n/9 Partially
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 87--87
-[]\OT1/cmr/m/n/9 Selected re-gions struc-turally
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
+[]\OT1/cmr/m/n/9 Partially
  []
 
-[2]
-Underfull \hbox (badness 2150) in paragraph at lines 114--115
+[2] [3]
+Underfull \hbox (badness 2150) in paragraph at lines 141--142
 \OT1/cmr/m/n/10 co-in-cide with struc-turally im-por-tant re-gions, three
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 114--115
+Underfull \hbox (badness 2772) in paragraph at lines 141--142
 \OT1/cmr/m/n/10 spectral-normalised em-pir-i-cal struc-tural con-nec-tiv-ity
  []
 
-[3]
-Underfull \hbox (badness 1609) in paragraph at lines 121--122
-[]\OT1/cmr/m/n/10 The em-pir-i-cal struc-tural con-nec-tiv-ity ma-trix was
- []
-
 [4]
-Underfull \hbox (badness 1661) in paragraph at lines 139--141
+Underfull \hbox (badness 1661) in paragraph at lines 168--170
 \OT1/cmr/m/n/10 Taken to-gether, these reduced-model re-sults served
  []
 
-<../figures/hopf model/network stability/fig2_labelled_matrices.png, id=195, 15
-72.5952pt x 473.8503pt>
-File: ../figures/hopf model/network stability/fig2_labelled_matrices.png Graphi
-c file (type png)
-<use ../figures/hopf model/network stability/fig2_labelled_matrices.png>
-Package pdftex.def Info: ../figures/hopf model/network stability/fig2_labelled_
-matrices.png  used on input line 158.
-(pdftex.def)             Requested size: 484.49844pt x 145.98827pt.
-<../figures/hopf model/network stability/fig3_loglog_grid.png, id=197, 1284.478
-8pt x 713.3049pt>
+<../figures/hopf model/network stability/fig2_combined.png, id=187, 1295.3193pt
+ x 1187.8779pt>
+File: ../figures/hopf model/network stability/fig2_combined.png Graphic file (t
+ype png)
+<use ../figures/hopf model/network stability/fig2_combined.png>
+Package pdftex.def Info: ../figures/hopf model/network stability/fig2_combined.
+png  used on input line 187.
+(pdftex.def)             Requested size: 484.49844pt x 444.3112pt.
+<../figures/hopf model/network stability/fig3_loglog_grid.png, id=189, 1283.515
+2pt x 351.9549pt>
 File: ../figures/hopf model/network stability/fig3_loglog_grid.png Graphic file
  (type png)
 <use ../figures/hopf model/network stability/fig3_loglog_grid.png>
 Package pdftex.def Info: ../figures/hopf model/network stability/fig3_loglog_gr
-id.png  used on input line 167.
-(pdftex.def)             Requested size: 484.49844pt x 269.056pt.
-<../figures/hopf model/network stability/fig4_glioma_comparison.png, id=198, 10
-82.3637pt x 395.076pt>
+id.png  used on input line 196.
+(pdftex.def)             Requested size: 484.49844pt x 132.85277pt.
+<../figures/hopf model/network stability/fig4_glioma_comparison.png, id=190, 10
+88.6271pt x 395.076pt>
 File: ../figures/hopf model/network stability/fig4_glioma_comparison.png Graphi
 c file (type png)
 <use ../figures/hopf model/network stability/fig4_glioma_comparison.png>
 Package pdftex.def Info: ../figures/hopf model/network stability/fig4_glioma_co
-mparison.png  used on input line 176.
-(pdftex.def)             Requested size: 484.49844pt x 176.84816pt.
-<../figures/hopf model/network stability/fig6_8_connectotomy.png, id=199, 1146.
+mparison.png  used on input line 208.
+(pdftex.def)             Requested size: 484.49844pt x 175.82936pt.
+<../figures/hopf model/network stability/fig6_8_connectotomy.png, id=191, 1146.
 684pt x 878.3214pt>
 File: ../figures/hopf model/network stability/fig6_8_connectotomy.png Graphic f
 ile (type png)
 <use ../figures/hopf model/network stability/fig6_8_connectotomy.png>
 Package pdftex.def Info: ../figures/hopf model/network stability/fig6_8_connect
-otomy.png  used on input line 185.
+otomy.png  used on input line 222.
 (pdftex.def)             Requested size: 484.49844pt x 371.11722pt.
-[5] [6 <../figures/hopf model/network stability/fig2_labelled_matrices.png> <..
-/figures/hopf model/network stability/fig3_loglog_grid.png>]
-<../figures/hopf model/virtual lesioning/fig1_ranked_dK.png, id=221, 930.1149pt
- x 514.3215pt>
+[5] [6 <../figures/hopf model/network stability/fig2_combined.png>]
+<../figures/hopf model/virtual lesioning/fig1_ranked_dK.png, id=212, 1583.9175p
+t x 648.5028pt>
 File: ../figures/hopf model/virtual lesioning/fig1_ranked_dK.png Graphic file (
 type png)
 <use ../figures/hopf model/virtual lesioning/fig1_ranked_dK.png>
 Package pdftex.def Info: ../figures/hopf model/virtual lesioning/fig1_ranked_dK
-.png  used on input line 210.
-(pdftex.def)             Requested size: 510.0pt x 282.01443pt.
-<../figures/hopf model/virtual lesioning/fig3_differential_atlas.png, id=222, 9
-30.1149pt x 279.6849pt>
+.png  used on input line 252.
+(pdftex.def)             Requested size: 510.0pt x 208.80164pt.
+<../figures/hopf model/virtual lesioning/fig3_differential_atlas.png, id=213, 1
+570.668pt x 347.6187pt>
 File: ../figures/hopf model/virtual lesioning/fig3_differential_atlas.png Graph
 ic file (type png)
 <use ../figures/hopf model/virtual lesioning/fig3_differential_atlas.png>
 Package pdftex.def Info: ../figures/hopf model/virtual lesioning/fig3_different
-ial_atlas.png  used on input line 219.
-(pdftex.def)             Requested size: 510.0pt x 153.35773pt.
-<../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png, id=223, 1002.1
-44pt x 586.3506pt>
+ial_atlas.png  used on input line 266.
+(pdftex.def)             Requested size: 510.0pt x 112.86865pt.
+<../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png, id=214, 1004.5
+53pt x 586.5915pt>
 File: ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png Graphic fi
 le (type png)
 <use ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png>
 Package pdftex.def Info: ../figures/hopf model/virtual lesioning/fig4_hubness_v
-s_dK.png  used on input line 228.
-(pdftex.def)             Requested size: 510.0pt x 298.39961pt.
- [7 <../figures/hopf model/network stability/fig4_glioma_comparison.png>]
-<../figures/hopf model/synthesis/fig2_partA_vs_partB.png, id=236, 531.4254pt x 
-387.849pt>
+s_dK.png  used on input line 279.
+(pdftex.def)             Requested size: 510.0pt x 297.80615pt.
+ [7 <../figures/hopf model/network stability/fig3_loglog_grid.png> <../figures/
+hopf model/network stability/fig4_glioma_comparison.png>]
+<../figures/hopf model/synthesis/fig2_partA_vs_partB.png, id=226, 669.702pt x 4
+79.8728pt>
 File: ../figures/hopf model/synthesis/fig2_partA_vs_partB.png Graphic file (typ
 e png)
 <use ../figures/hopf model/synthesis/fig2_partA_vs_partB.png>
 Package pdftex.def Info: ../figures/hopf model/synthesis/fig2_partA_vs_partB.pn
-g  used on input line 249.
-(pdftex.def)             Requested size: 177.1203pt x 129.26294pt.
-<../figures/hopf model/sc perturbation/fig1_dose_response.png, id=238, 641.0349
-pt x 351.9549pt>
-File: ../figures/hopf model/sc perturbation/fig1_dose_response.png Graphic file
- (type png)
-<use ../figures/hopf model/sc perturbation/fig1_dose_response.png>
-Package pdftex.def Info: ../figures/hopf model/sc perturbation/fig1_dose_respon
-se.png  used on input line 268.
-(pdftex.def)             Requested size: 255.0pt x 140.00075pt.
-
-Overfull \hbox (9.0pt too wide) in paragraph at lines 268--269
- [][] 
- []
-
-<../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png, id=239, 785
-.5749pt x 294.1389pt>
-File: ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png Graphic
- file (type png)
-<use ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png>
-Package pdftex.def Info: ../figures/hopf model/sc perturbation/fig2_sensitivity
-_ranked.png  used on input line 277.
-(pdftex.def)             Requested size: 397.79938pt x 148.94514pt.
-<../figures/hopf model/sc perturbation/fig3_convergence.png, id=240, 460.119pt 
+g  used on input line 305.
+(pdftex.def)             Requested size: 246.0pt x 176.26875pt.
+ [8 <../figures/hopf model/network stability/fig6_8_connectotomy.png>]
+<../figures/hopf model/sc perturbation/fig3_convergence.png, id=236, 460.119pt 
 x 279.6849pt>
 File: ../figures/hopf model/sc perturbation/fig3_convergence.png Graphic file (
 type png)
 <use ../figures/hopf model/sc perturbation/fig3_convergence.png>
 Package pdftex.def Info: ../figures/hopf model/sc perturbation/fig3_convergence
-.png  used on input line 286.
-(pdftex.def)             Requested size: 246.0pt x 149.53392pt.
-[8 <../figures/hopf model/network stability/fig6_8_connectotomy.png>] [9 <../fi
-gures/hopf model/virtual lesioning/fig1_ranked_dK.png> <../figures/hopf model/v
-irtual lesioning/fig3_differential_atlas.png>] [10 <../figures/hopf model/virtu
-al lesioning/fig4_hubness_vs_dK.png>]
+.png  used on input line 320.
+(pdftex.def)             Requested size: 184.5pt x 112.14937pt.
+<../figures/hopf model/sc perturbation/fig1_dose_response.png, id=237, 641.0349
+pt x 351.9549pt>
+File: ../figures/hopf model/sc perturbation/fig1_dose_response.png Graphic file
+ (type png)
+<use ../figures/hopf model/sc perturbation/fig1_dose_response.png>
+Package pdftex.def Info: ../figures/hopf model/sc perturbation/fig1_dose_respon
+se.png  used on input line 334.
+(pdftex.def)             Requested size: 255.0pt x 140.00075pt.
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 311.
+Overfull \hbox (9.0pt too wide) in paragraph at lines 334--335
+ [][] 
+ []
+
+<../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png, id=238, 785
+.5749pt x 294.1389pt>
+File: ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png Graphic
+ file (type png)
+<use ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png>
+Package pdftex.def Info: ../figures/hopf model/sc perturbation/fig2_sensitivity
+_ranked.png  used on input line 347.
+(pdftex.def)             Requested size: 255.0pt x 95.47731pt.
+
+Overfull \hbox (9.0pt too wide) in paragraph at lines 347--348
+ [][] 
+ []
+
+[9 <../figures/hopf model/virtual lesioning/fig1_ranked_dK.png> <../figures/hop
+f model/virtual lesioning/fig3_differential_atlas.png>] [10 <../figures/hopf mo
+del/virtual lesioning/fig4_hubness_vs_dK.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 370.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 311.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 370.
 
 
 Class revtex4-2 Warning: Deferred float stuck during \clearpage processing.
 
 [11 <../figures/hopf model/synthesis/fig2_partA_vs_partB.png> <../figures/hopf 
-model/sc perturbation/fig1_dose_response.png>] (./paper.bbl
+model/sc perturbation/fig3_convergence.png> <../figures/hopf model/sc perturbat
+ion/fig1_dose_response.png> <../figures/hopf model/sc perturbation/fig2_sensiti
+vity_ranked.png>] (./paper.bbl
 Underfull \hbox (badness 4859) in paragraph at lines 1--1
  []\OT1/cmr/m/n/9 All fig-ures were gen-er-ated us-ing cus-tom Python
  []
 
-
-Underfull \hbox (badness 4569) in paragraph at lines 1--1
- \OT1/cmr/m/n/9 (e.g., fig-ures gen-er-ated us-ing the orig-i-nal anal-y-
- []
-
-[12 <../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png> <../fig
-ures/hopf model/sc perturbation/fig3_convergence.png>]) [13] (./paper.aux)
+[12]) [13] (./paper.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F1008EB29D60D03D120B74BD5B2B200C;6340.
+(rerunfilecheck)             Checksum: C89503B8148CF220FCAF69806930076B;5848.
  ) 
 Here is how much of TeX's memory you used:
- 11890 strings out of 474662
- 181765 string characters out of 5751109
- 602071 words of memory out of 5000000
+ 11887 strings out of 474662
+ 181685 string characters out of 5751109
+ 613076 words of memory out of 5000000
  34728 multiletter control sequences out of 15000+600000
  565409 words of font info for 62 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,12n,79p,1533b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,1495b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 2.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx9.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/c
@@ -634,10 +630,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025basic/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025bas
 ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2025
 basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on paper.pdf (13 pages, 4139347 bytes).
+Output written on paper.pdf (13 pages, 7189756 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
- 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 374 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
