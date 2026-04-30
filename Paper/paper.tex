@@ -221,7 +221,12 @@ Finally, we reproduced the functional connectotomy analysis by removing tumour-r
     \centering
     \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig6_8_connectotomy.png}
     \caption{
-    Functional connectotomy analysis. Tumour-related regions were removed from the simulated--empirical PLI comparison and the model was refitted. In the glioma target, masking tumour-region sets generally reduced absolute fitted coupling, but the control-relative effect was heterogeneous across tumour groupings. This supports a qualitative reproduction of the original connectotomy direction while showing that the cohort-averaged connectotomy effect is not uniform across region sets.
+    \textbf{Functional connectotomy analysis.}
+    (a) Distribution of optimal glioma fitted coupling $K^*$ before and after connectotomy for each tumour-region set, showing how masking tumour-related regions changes the coupling required to fit the glioma PLI target.
+    (b) Histogram of connectotomy-induced coupling shifts, expressed relative to the corresponding control shift, showing that the effect varies across tumour-region groupings and initial conditions.
+    (c) Empirical structural connectivity matrix with tumour-related regions highlighted, showing where the masked regions lie within the anatomical network.
+    (d) Summary of the mean connectotomy effect relative to control for each tumour-region set, with error bars showing variability across initial conditions.
+    Together, the panels show that tumour-region masking generally alters fitted coupling in the glioma model, but that the size of the control-relative effect depends on the region set being removed.
     }
     \label{fig:network_connectotomy}
 \end{figure*}
@@ -312,7 +317,7 @@ Consistent with this separation between functional and structural sensitivity, t
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.94\columnwidth]{../figures/hopf model/sc perturbation/fig3_convergence.png}
+    \includegraphics[width=0.75\columnwidth]{../figures/hopf model/sc perturbation/fig3_convergence.png}
     \caption{
     \textbf{Change in the control--glioma coupling gap under structural damage.}
     Mean fitted-coupling difference, $\langle K^*_{\mathrm{control}}\rangle - \langle K^*_{\mathrm{glioma}}\rangle$, is shown across damage levels for driver and non-driver regions.
@@ -337,9 +342,9 @@ Taken together, these results indicate that direct structural damage alone was n
     \label{fig:scpert_dose_response}
 \end{figure}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
-    \includegraphics[width=0.78\textwidth]{../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png}
+    \includegraphics[width=0.50\textwidth]{../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png}
     \caption{
     \textbf{Per-region structural-perturbation sensitivity over the mild damage range.}
     Bars show the slope of fitted control coupling, $K^*_{\mathrm{control}}$, against damage level over $0 \leq d \leq 0.5$ for each perturbed region.
@@ -347,7 +352,7 @@ Taken together, these results indicate that direct structural damage alone was n
     Driver regions do not show consistently steeper damage responses than non-drivers, indicating that functional driver status does not translate into stronger anatomical perturbation sensitivity.
     }
     \label{fig:scpert_sensitivity}
-\end{figure*}
+\end{figure}
 
 \section{Discussion}
 
