@@ -169,7 +169,7 @@ Before turning to the empirical whole-brain model, we verified that the numerica
 Taken together, these reduced-model results served mainly as validation and provided intuition for the scaling structure examined in the empirical network model.
 
 \subsection{Empirical network fitting and scaling law}
-We next scaled the model to the empirical 78-node structural connectome and compared simulated phase-lag connectivity with the empirical control-cohort PLI matrix. The simulated PLI reproduced broad block-structured organisation also visible in the empirical data, indicating that the coupled Hopf network captures non-trivial large-scale structure rather than producing homogeneous synchrony (Fig.~\ref{fig:network_matrices}).
+We next scaled the model to the empirical 78-node structural connectome and compared simulated phase-lag connectivity with the empirical control- and glioma-cohort PLI matrices. The simulated PLI reproduced broad block-structured organisation also visible in the empirical data, indicating that the coupled Hopf network captures non-trivial large-scale structure rather than producing homogeneous synchrony (Fig.~\ref{fig:network_matrices}).
 
 To quantify model performance, we performed a grid search over coupling strength $K$ and excitability $\lambda$, using the Pearson correlation between simulated and empirical PLI as the goodness-of-fit measure. The best fits occurred for positive values of $\lambda$, and the high-fit region extended diagonally through parameter space (Fig.~\ref{fig:network_scaling}). In the log--log parameter search, the high-fit region followed an approximately diagonal band through \((K,\lambda)\) space. This pattern is expected if model fit is organised by the normalised coupling \(\kappa = K/\sqrt{\lambda}\), since lines of constant \(\kappa\) satisfy
 \[
@@ -184,9 +184,14 @@ We then compared the fitted parameter landscapes for the control and glioma coho
 Finally, we reproduced the functional connectotomy analysis by removing tumour-related regions from the PLI comparison stage and refitting the model. In the glioma fit, masking tumour-region sets generally reduced the absolute fitted coupling, consistent with the direction of the original connectotomy effect. However, the control-relative change was heterogeneous across tumour sets: some tumour masks produced larger reductions in the control comparison than in the glioma comparison. We therefore interpret this as a qualitative reproduction of the connectotomy direction rather than an exact patient-level replication of the original effect.
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig2_combined.png}
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/validation and fitting/fig1_network_fitting.png}
     \caption{
-    Empirical-scale network fitting. Shown are the empirical structural connectivity matrix, a best-fit simulated PLI matrix, and the empirical control PLI matrix. The simulated matrix captures broad block-structured organisation also visible in the empirical data, supporting the use of the coupled Hopf network as a coarse-grained model of large-scale functional connectivity.
+    \textbf{Empirical-scale network fitting.}
+    (a) Empirical structural connectivity matrix used to define the 78-node coupled Hopf network.
+    (b) Simulated PLI matrix at the best-fitting parameter combination, shown here for \(K = 60.00\) and \(\lambda = 13.06\).
+    (c) Empirical control-cohort PLI matrix.
+    (d) Empirical glioma-cohort PLI matrix.
+    The simulated matrix reproduces broad block-structured organisation also visible in the empirical data, supporting the use of the coupled Hopf network as a coarse-grained model of large-scale functional connectivity.
     }
     \label{fig:network_matrices}
 \end{figure*}
