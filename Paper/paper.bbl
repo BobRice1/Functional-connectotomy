@@ -2,66 +2,52 @@
 
 \bibitem{Alexandersen2025}
 C.~G. Alexandersen, L.~Douw, M.~L.~M. Zimmermann, C.~Bick, and A.~Goriely.
-\newblock Functional connectotomy of a whole-brain model reveals tumor-induced
-  alterations to neuronal dynamics in glioma patients.
+\newblock Functional connectotomy of a whole-brain model reveals tumor-induced alterations to neuronal dynamics in glioma patients.
 \newblock {\em Network Neuroscience}, 9(1):280--302, 2025.
 
 \bibitem{BullmoreSporns2009}
 E.~Bullmore and O.~Sporns.
-\newblock Complex brain networks: graph theoretical analysis of structural and
-  functional systems.
+\newblock Complex brain networks: graph theoretical analysis of structural and functional systems.
 \newblock {\em Nature Reviews Neuroscience}, 10(3):186--198, 2009.
 
 \bibitem{Cabral2011}
 J.~Cabral, E.~Hugues, O.~Sporns, and G.~Deco.
-\newblock Role of local network oscillations in resting-state functional
-  connectivity.
+\newblock Role of local network oscillations in resting-state functional connectivity.
 \newblock {\em Neuroimage}, 57(1):130--139, 2011.
 
 \bibitem{Cabral2012}
 J.~Cabral, M.~L. Kringelbach, and G.~Deco.
-\newblock Exploring the network dynamics underlying brain activity during
-  resting state.
+\newblock Exploring the network dynamics underlying brain activity during resting state.
 \newblock {\em Progress in Neurobiology}, 114:102--112, 2012.
 
 \bibitem{Deco2011}
 G.~Deco, V.~K. Jirsa, and A.~R. McIntosh.
-\newblock Emerging concepts for the dynamical organization of resting-state
-  activity in the brain.
+\newblock Emerging concepts for the dynamical organization of resting-state activity in the brain.
 \newblock {\em Nature Reviews Neuroscience}, 12(1):43--56, 2011.
 
 \bibitem{Deco2014}
 G.~Deco and M.~L. Kringelbach.
-\newblock Great expectations: using whole-brain computational connectomics for
-  understanding neuropsychiatric disorders.
+\newblock Great expectations: using whole-brain computational connectomics for understanding neuropsychiatric disorders.
 \newblock {\em Neuron}, 84(5):892--905, 2014.
 
 \bibitem{Freyer2011}
-F.~Freyer, J.~A. Roberts, R.~Becker, P.~A. Robinson, P.~Ritter, and
-  M.~Breakspear.
-\newblock Biophysical mechanisms of multistability in resting-state cortical
-  rhythms.
+F.~Freyer, J.~A. Roberts, R.~Becker, P.~A. Robinson, P.~Ritter, and M.~Breakspear.
+\newblock Biophysical mechanisms of multistability in resting-state cortical rhythms.
 \newblock {\em The Journal of Neuroscience}, 31(17):6353--6361, 2011.
 
 \bibitem{Honey2009}
-C.~J. Honey, O.~Sporns, L.~Cammoun, X.~Gigandet, J.~P. Thiran, R.~Meuli, and
-  P.~Hagmann.
-\newblock Predicting human resting-state functional connectivity from
-  structural connectivity.
-\newblock {\em Proceedings of the National Academy of Sciences},
-  106(6):2035--2040, 2009.
+C.~J. Honey, O.~Sporns, L.~Cammoun, X.~Gigandet, J.~P. Thiran, R.~Meuli, and P.~Hagmann.
+\newblock Predicting human resting-state functional connectivity from structural connectivity.
+\newblock {\em Proceedings of the National Academy of Sciences}, 106(6):2035--2040, 2009.
 
 \bibitem{Stam2007}
 C.~J. Stam, G.~Nolte, and A.~Daffertshofer.
-\newblock Phase-lag index: assessment of functional connectivity from multi
-  channel eeg and meg.
+\newblock Phase-lag index: assessment of functional connectivity from multi channel eeg and meg.
 \newblock {\em Human Brain Mapping}, 28(11):1178--1193, 2007.
 
 \bibitem{TzourioMazoyer2002}
-N.~Tzourio-Mazoyer, B.~Landeau, D.~Papathanassiou, F.~Crivello, O.~Etard,
-  N.~Delcroix, B.~Mazoyer, and M.~Joliot.
-\newblock Automated anatomical labeling of activations in spm using a
-  macroscopic anatomical parcellation of the mni mri single-subject brain.
+N.~Tzourio-Mazoyer, B.~Landeau, D.~Papathanassiou, F.~Crivello, O.~Etard, N.~Delcroix, B.~Mazoyer, and M.~Joliot.
+\newblock Automated anatomical labeling of activations in spm using a macroscopic anatomical parcellation of the mni mri single-subject brain.
 \newblock {\em Neuroimage}, 15(1):273--289, 2002.
 
 \end{thebibliography}
