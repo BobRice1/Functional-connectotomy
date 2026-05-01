@@ -160,11 +160,11 @@ INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ../figures/hopf model/network stability/fig2_labelled_matrices.png
-INPUT ../figures/hopf model/network stability/fig2_labelled_matrices.png
-INPUT ../figures/hopf model/network stability/fig2_labelled_matrices.png
-INPUT ../figures/hopf model/network stability/fig2_labelled_matrices.png
-INPUT ../figures/hopf model/network stability/fig2_labelled_matrices.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
+INPUT ../figures/hopf model/validation and fitting/fig1_network_fitting.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
 INPUT ../figures/hopf model/network stability/fig3_loglog_grid.png
@@ -195,11 +195,6 @@ INPUT ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png
 INPUT ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png
 INPUT ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png
 INPUT ../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png
-INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
-INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
-INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
-INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
-INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
 INPUT ../figures/hopf model/sc perturbation/fig1_dose_response.png
 INPUT ../figures/hopf model/sc perturbation/fig1_dose_response.png
 INPUT ../figures/hopf model/sc perturbation/fig1_dose_response.png
@@ -210,6 +205,11 @@ INPUT ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png
 INPUT ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png
 INPUT ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png
 INPUT ../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png
+INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
+INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
+INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
+INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
+INPUT ../figures/hopf model/synthesis/fig2_partA_vs_partB.png
 INPUT ../figures/hopf model/sc perturbation/fig3_convergence.png
 INPUT ../figures/hopf model/sc perturbation/fig3_convergence.png
 INPUT ../figures/hopf model/sc perturbation/fig3_convergence.png
