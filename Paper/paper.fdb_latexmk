@@ -1,24 +1,24 @@
 # Fdb version 4
-["bibtex paper"] 1777559409.30124 "paper.aux" "paper.bbl" "paper" 1777559415.77572 0
-  "./paperNotes.bib" 1777559409.5219 0 d41d8cd98f00b204e9800998ecf8427e ""
+["bibtex paper"] 1777593688.44878 "paper.aux" "paper.bbl" "paper" 1777593695.12074 0
+  "./paperNotes.bib" 1777593688.70441 0 d41d8cd98f00b204e9800998ecf8427e ""
   "./refs.bib" 1777474121.7767 3482 e82f76b60d391515f7d9c3b6d3abefc7 ""
   "/usr/local/texlive/2025basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "paper.aux" 1777559415.66921 21516 cb1b6bc720e7dbdc1edd3caa02621bd5 "pdflatex"
+  "paper.aux" 1777593695.03407 21667 c03cab299409a007f4fdd29effcd3746 "pdflatex"
   (generated)
   "paper.bbl"
   "paper.blg"
   (rewritten before read)
-["pdflatex"] 1777559409.31919 "paper.tex" "paper.pdf" "paper" 1777559415.7759 0
-  "../figures/hopf model/network stability/fig3_loglog_grid.png" 1777552369.21384 406871 28f125330a609c40d3afd17dfd65635a ""
-  "../figures/hopf model/network stability/fig4_glioma_comparison.png" 1777555955.72272 370410 1ceeeed5607794a0fbe8b2ce35e606ea ""
+["pdflatex"] 1777593688.49962 "paper.tex" "paper.pdf" "paper" 1777593695.1209 0
+  "../figures/hopf model/network stability/fig3_loglog_grid.png" 1777589960.32469 422021 2f1bc1f575da1167c6dc02c637491785 ""
+  "../figures/hopf model/network stability/fig4_glioma_comparison.png" 1777590185.09444 393605 b26caaddd1ace022e7a8b9424bf6f771 ""
   "../figures/hopf model/network stability/fig6_8_connectotomy.png" 1776881705.58748 367666 86513167e05b2da432cc40ca665d9007 ""
-  "../figures/hopf model/sc perturbation/fig1_dose_response.png" 1777372344.21464 471540 a945f99487e446f031855d558f146b99 ""
-  "../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png" 1777238815.21577 181428 351d3362e32e6007c684eae9f6821a0b ""
-  "../figures/hopf model/sc perturbation/fig3_convergence.png" 1777238815.21626 117253 452088a3cf9f7419667fcf3593bb09a0 ""
-  "../figures/hopf model/synthesis/fig2_partA_vs_partB.png" 1777559398.19519 282392 20218c50453e6c2c50c3fac33777c85e ""
+  "../figures/hopf model/sc perturbation/fig1_dose_response.png" 1777590670.16585 478310 a110f7ee9a81d8a2d30ef67b9cb0afa3 ""
+  "../figures/hopf model/sc perturbation/fig2_sensitivity_ranked.png" 1777591060.47086 268985 3d3ef97cd97ae83dd9623c217a8a6b10 ""
+  "../figures/hopf model/sc perturbation/fig3_convergence.png" 1777591546.7868 125176 55d53a0a4286f5cd74e671140e01c462 ""
+  "../figures/hopf model/synthesis/fig2_partA_vs_partB.png" 1777591257.82378 257882 29a4f527994205aaf2cf5f8e8546d349 ""
   "../figures/hopf model/validation and fitting/fig1_network_fitting.png" 1777555955.72718 248341 ffc4fa86999ac2ddcc6b49dc65f67c62 ""
-  "../figures/hopf model/virtual lesioning/fig1_ranked_dK.png" 1777554123.91615 2354738 c1df2b7876a98745ef0dac43106dab68 ""
-  "../figures/hopf model/virtual lesioning/fig3_differential_atlas.png" 1777553379.11504 1909786 5670de8d8b2d47b407cad192c77279ed ""
+  "../figures/hopf model/virtual lesioning/fig1_ranked_dK.png" 1777590434.45396 2356206 76d57d97658eb1d1221a6fefd79e7f00 ""
+  "../figures/hopf model/virtual lesioning/fig3_differential_atlas.png" 1777590488.98023 1912883 25e9f7ac98f0f1e417fe91c2437da028 ""
   "../figures/hopf model/virtual lesioning/fig4_hubness_vs_dK.png" 1777554789.00553 623631 11473eee6590b063251c15b8308106d8 ""
   "/Users/gillianmacdonald/Library/texmf/tex/latex/revtex/aps10pt4-2.rtx" 1685563380 4721 1078241377b2832c365c1e433df5a943 ""
   "/Users/gillianmacdonald/Library/texmf/tex/latex/revtex/aps4-2.rtx" 1685563380 16396 0a96d75178570a7978b45d39eb710012 ""
@@ -116,10 +116,10 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768164710 79187 04b17f8738f833a5a5f7867124477b59 ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1768164699 2663839 27c498f996dab606bc356fc3a62b4299 ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "paper.aux" 1777559415.66921 21516 cb1b6bc720e7dbdc1edd3caa02621bd5 "pdflatex"
-  "paper.bbl" 1777559409.31751 2577 c4c6accb4922167b2dc6a5311ca9e0d0 "bibtex paper"
-  "paper.out" 1777559415.6706 5848 c89503b8148cf220fcaf69806930076b "pdflatex"
-  "paper.tex" 1777559337.5013 53016 6b25f445b0d5cb62cecc8ac2bb551fbd ""
+  "paper.aux" 1777593695.03407 21667 c03cab299409a007f4fdd29effcd3746 "pdflatex"
+  "paper.bbl" 1777593688.49792 2549 2ca8db1d83fd5050f03c7212c03b5774 "bibtex paper"
+  "paper.out" 1777593695.03538 6002 9234310ac625b31421c99079440979f9 "pdflatex"
+  "paper.tex" 1777593681.51199 54424 67ba5595d9724e7c80862b310a913fc1 ""
   (generated)
   "paper.aux"
   "paper.log"
