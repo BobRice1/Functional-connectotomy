@@ -142,33 +142,6 @@ To assess whether strong functional coupling drivers coincide with structurally 
 
 Together, these analyses produced a region-wise atlas of functional coupling drivers and tested whether the connectotomy effect can be explained by the structural importance of the affected regions.
 
-\begin{figure*}[!t]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/hopf model/validation and fitting/fig1_network_fitting.png}
-    \caption{
-    \textbf{Empirical-scale network fitting.}
-    (a) Empirical structural connectivity matrix used to define the 78-node coupled Hopf network.
-    (b) Simulated PLI matrix at the best-fitting control-cohort parameters ($K = 21.71$, $\lambda = 13.27$, Pearson $r = 0.295$), obtained by grid search over 30 repeated simulations.
-    (c) Empirical control-cohort PLI matrix.
-    (d) Empirical glioma-cohort PLI matrix.
-    Panels (b)--(d) share the same colour scale for direct comparison.
-    The simulated matrix captures the broad scale of phase-lag connectivity and reproduces some block-structured organisation, although fine-grained regional differences are not fully recovered (Pearson $r = 0.295$). This is consistent with the Hopf model serving as a coarse-grained phenomenological description of large-scale dynamics rather than a precise region-level predictor.
-    }
-    \label{fig:network_matrices}
-\end{figure*}
-
-\begin{figure*}[!t]
-    \centering
-    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
-    \caption{
-    \textbf{Log--log parameter search for the empirical control network.}
-    (a) Mean model fit across initial conditions, computed as the Pearson correlation between simulated and empirical control matrices over the $K$--$\lambda$ grid.
-    (b--c) Fit landscapes from two representative initial conditions, showing that the high-fit region is reproducible across runs.
-    The dashed diagonal guide lines indicate fixed values of the normalised coupling $\kappa = K/\sqrt{\lambda}$: $\kappa=0.3$, $1.0$, $3.0$, and $10.0$. Along each line, $K$ increases with $\sqrt{\lambda}$ while $\kappa$ remains constant, illustrating that the best-fitting region is organised primarily by the balance between global coupling strength and local excitability rather than by either parameter independently.
-    }
-    \label{fig:network_scaling}
-\end{figure*}
-
 \subsection{Structural connectivity perturbation}
 As a second extension, we tested whether anatomical damage to regions identified by the virtual-lesioning atlas changes the fitted global coupling in the whole-brain Hopf model. In contrast to the virtual-lesioning analysis, which removed regions only from the PLI comparison stage, this analysis directly perturbed the structural connectivity matrix used in the simulations and then refit the model.
 This analysis therefore differs from virtual lesioning in the order of operations. In virtual lesioning, the full model is simulated first and a region is ignored only when scoring the PLI fit. In structural perturbation, the structural connectivity matrix is modified before the Hopf equations are integrated. The resulting simulated dynamics therefore arise from a damaged connectome.
@@ -204,6 +177,33 @@ To quantify model performance, we performed a grid search over coupling strength
 K = \kappa \sqrt{\lambda}.
 \]
 This supports the interpretation that phase-based functional connectivity is governed primarily by the balance between interregional coupling and local excitability, rather than by \(K\) and \(\lambda\) independently.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/validation and fitting/fig1_network_fitting.png}
+    \caption{
+    \textbf{Empirical-scale network fitting.}
+    (a) Empirical structural connectivity matrix used to define the 78-node coupled Hopf network.
+    (b) Simulated PLI matrix at the best-fitting control-cohort parameters ($K = 21.71$, $\lambda = 13.27$, Pearson $r = 0.295$), obtained by grid search over 30 repeated simulations.
+    (c) Empirical control-cohort PLI matrix.
+    (d) Empirical glioma-cohort PLI matrix.
+    Panels (b)--(d) share the same colour scale for direct comparison.
+    The simulated matrix captures the broad scale of phase-lag connectivity and reproduces some block-structured organisation, although fine-grained regional differences are not fully recovered (Pearson $r = 0.295$). This is consistent with the Hopf model serving as a coarse-grained phenomenological description of large-scale dynamics rather than a precise region-level predictor.
+    }
+    \label{fig:network_matrices}
+\end{figure*}
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../figures/hopf model/network stability/fig3_loglog_grid.png}
+    \caption{
+    \textbf{Log--log parameter search for the empirical control network.}
+    (a) Mean model fit across initial conditions, computed as the Pearson correlation between simulated and empirical control matrices over the $K$--$\lambda$ grid.
+    (b--c) Fit landscapes from two representative initial conditions, showing that the high-fit region is reproducible across runs.
+    The dashed diagonal guide lines indicate fixed values of the normalised coupling $\kappa = K/\sqrt{\lambda}$: $\kappa=0.3$, $1.0$, $3.0$, and $10.0$. Along each line, $K$ increases with $\sqrt{\lambda}$ while $\kappa$ remains constant, illustrating that the best-fitting region is organised primarily by the balance between global coupling strength and local excitability rather than by either parameter independently.
+    }
+    \label{fig:network_scaling}
+\end{figure*}
 
 \subsection{Glioma-control comparison}
 We then compared the fitted parameter landscapes for the control and glioma cohort averages. Across excitability values, the glioma cohort was shifted toward higher optimal coupling strengths than the control cohort (Fig.~\ref{fig:network_glioma}). This difference was also reflected in the fitted normalised-coupling lines, which gave a larger effective $\kappa$ for glioma than for control. The fitted normalised coupling was \(\kappa_{\mathrm{control}} = 5.51\) for the control cohort and \(\kappa_{\mathrm{glioma}} = 6.02\) for the glioma cohort, corresponding to an approximately \(9.3\%\) increase in the glioma fit. Thus, the reproduced whole-brain model supports the original paper's central claim that glioma-related dynamics are associated with stronger interregional interactions relative to local oscillatory dynamics.
